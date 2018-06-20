@@ -6,20 +6,23 @@
     
 
     
-    <title>切片操作 | 虾米吃大鱼</title>
+    <title>切片&amp;深浅拷贝 | 虾米吃大鱼</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta property="og:type" content="article">
-<meta property="og:title" content="切片操作">
-<meta property="og:url" content="http://yoursite.com/2018/06/20/切片操作/index.html">
+    <meta name="description" content="不可变数据的片选深浅拷贝 123456789101112131415161718192021222324import copystr1 = &quot;hello world&quot;str2 = str1str3 = str1[:]str4 = copy.copy(str1)str5 = copy.deepcopy(str1)print(id(str1))  # 97509688print(id(str2))">
+<meta property="og:type" content="article">
+<meta property="og:title" content="切片&amp;深浅拷贝">
+<meta property="og:url" content="http://yoursite.com/2018/06/20/切片-深浅拷贝/index.html">
 <meta property="og:site_name" content="虾米吃大鱼">
+<meta property="og:description" content="不可变数据的片选深浅拷贝 123456789101112131415161718192021222324import copystr1 = &quot;hello world&quot;str2 = str1str3 = str1[:]str4 = copy.copy(str1)str5 = copy.deepcopy(str1)print(id(str1))  # 97509688print(id(str2))">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-06-20T06:25:53.472Z">
+<meta property="og:updated_time" content="2018-06-20T08:03:42.981Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="切片操作">
+<meta name="twitter:title" content="切片&amp;深浅拷贝">
+<meta name="twitter:description" content="不可变数据的片选深浅拷贝 123456789101112131415161718192021222324import copystr1 = &quot;hello world&quot;str2 = str1str3 = str1[:]str4 = copy.copy(str1)str5 = copy.deepcopy(str1)print(id(str1))  # 97509688print(id(str2))">
     
 
     
@@ -132,14 +135,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-切片操作" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-切片-深浅拷贝" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        切片操作
+        切片&amp;深浅拷贝
         </h1>
     
 
@@ -149,8 +152,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/06/20/切片操作/" class="article-date">
-            <time datetime="2018-06-20T06:25:53.000Z" itemprop="datePublished">2018-06-20</time>
+        <a href="/2018/06/20/切片-深浅拷贝/" class="article-date">
+            <time datetime="2018-06-20T08:03:23.000Z" itemprop="datePublished">2018-06-20</time>
         </a>
     </div>
 
@@ -159,14 +162,18 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><strong>不可变数据的片选深浅拷贝</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">str1 = <span class="string">"hello world"</span></span><br><span class="line">str2 = str1</span><br><span class="line">str3 = str1[:]</span><br><span class="line">str4 = copy.copy(str1)</span><br><span class="line">str5 = copy.deepcopy(str1)</span><br><span class="line">print(id(str1))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str2))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str3))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str4))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str5))  <span class="comment"># 97509688</span></span><br><span class="line"></span><br><span class="line">str1 = <span class="string">"hello china"</span></span><br><span class="line">print(str1)  <span class="comment"># hello china</span></span><br><span class="line">print(str2)  <span class="comment"># hello world</span></span><br><span class="line">print(str3)  <span class="comment"># hello world</span></span><br><span class="line">print(str4)  <span class="comment"># hello world</span></span><br><span class="line">print(str5)  <span class="comment"># hello world</span></span><br><span class="line"></span><br><span class="line">print(id(str1))  <span class="comment"># 97509728</span></span><br><span class="line">print(id(str2))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str3))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str4))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str5))  <span class="comment"># 97509688</span></span><br></pre></td></tr></table></figure>
+<p><strong>可变数据的片选深浅拷贝</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]]]</span><br><span class="line">list2 = list1</span><br><span class="line">list3 = list1[:]</span><br><span class="line">list4 = copy.copy(list1)</span><br><span class="line">list5 = copy.deepcopy(list1)</span><br><span class="line">print(id(list1))  <span class="comment"># 96760976</span></span><br><span class="line">print(id(list2))  <span class="comment"># 96760976</span></span><br><span class="line">print(id(list3))  <span class="comment"># 96718120</span></span><br><span class="line">print(id(list4))  <span class="comment"># 95303320</span></span><br><span class="line">print(id(list5))  <span class="comment"># 96760336</span></span><br><span class="line"></span><br><span class="line">list1[<span class="number">0</span>] = <span class="string">'a'</span></span><br><span class="line">list1[<span class="number">3</span>][<span class="number">0</span>] = <span class="string">'a'</span></span><br><span class="line">print(list1)  <span class="comment"># ['a', 2, 3, ['a', 5, 6, [7, 8, 9]]]</span></span><br><span class="line">print(list2)  <span class="comment"># ['a', 2, 3, ['a', 5, 6, [7, 8, 9]]]</span></span><br><span class="line">print(list3)  <span class="comment"># [1, 2, 3, ['a', 5, 6, [7, 8, 9]]]</span></span><br><span class="line">print(list4)  <span class="comment"># [1, 2, 3, ['a', 5, 6, [7, 8, 9]]]</span></span><br><span class="line">print(list5)  <span class="comment"># [1, 2, 3, [4, 5, 6, [7, 8, 9]]]</span></span><br><span class="line"></span><br><span class="line">print(id(list1))  <span class="comment"># 96760976</span></span><br><span class="line">print(id(list2))  <span class="comment"># 96760976</span></span><br><span class="line">print(id(list3))  <span class="comment"># 96718120</span></span><br><span class="line">print(id(list4))  <span class="comment"># 95303320</span></span><br><span class="line">print(id(list5))  <span class="comment"># 96760336</span></span><br></pre></td></tr></table></figure>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2018/06/20/切片操作/" data-id="cjimrx4v200021oqhg3xyo1pp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/06/20/切片-深浅拷贝/" data-id="cjimu04ul0002vcqhcbcswc1f" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -303,20 +310,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/06/20/推导式/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            推导式
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/06/14/面向对象属性探究/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/06/20/推导式/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">面向对象属性探究</p>
+        <p class="article-nav-title">推导式</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -338,6 +335,26 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/06/20/切片-深浅拷贝/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/06/20/切片-深浅拷贝/" class="title">切片&amp;深浅拷贝</a></p>
+                            <p class="item-date"><time datetime="2018-06-20T08:03:23.000Z" itemprop="datePublished">2018-06-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/06/20/推导式/" class="thumbnail">
     
     
@@ -352,26 +369,6 @@
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/06/20/推导式/" class="title">推导式</a></p>
                             <p class="item-date"><time datetime="2018-06-20T07:05:14.000Z" itemprop="datePublished">2018-06-20</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/06/20/切片操作/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/06/20/切片操作/" class="title">切片操作</a></p>
-                            <p class="item-date"><time datetime="2018-06-20T06:25:53.000Z" itemprop="datePublished">2018-06-20</time></p>
                         </div>
                     </li>
                 
@@ -502,7 +499,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2018/06/20/切片操作/';
+    var disqus_url = 'http://yoursite.com/2018/06/20/切片-深浅拷贝/';
     
     (function() {
     var dsq = document.createElement('script');
