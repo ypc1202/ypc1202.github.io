@@ -6,20 +6,23 @@
     
 
     
-    <title>CSV | 虾米吃大鱼</title>
+    <title>虾米吃大鱼</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta property="og:type" content="article">
-<meta property="og:title" content="CSV">
-<meta property="og:url" content="http://yoursite.com/2018/06/13/CSV/index.html">
+    <meta name="description" content="类表推导式 打印0~9的平方。 1print([x * x for x in range(10)]) # =&amp;gt; [0, 1, 4, 9, 16, 25, 36, 49, 64, 81] 打印0~6的平方。 1print([x * x for x in range(10) if x &amp;lt; 7]) # =&amp;gt; [0, 1, 4, 9, 16, 25, 36] 将列表里小于等于20000数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虾米吃大鱼">
+<meta property="og:url" content="http://yoursite.com/2018/06/20/推导式/index.html">
 <meta property="og:site_name" content="虾米吃大鱼">
+<meta property="og:description" content="类表推导式 打印0~9的平方。 1print([x * x for x in range(10)]) # =&amp;gt; [0, 1, 4, 9, 16, 25, 36, 49, 64, 81] 打印0~6的平方。 1print([x * x for x in range(10) if x &amp;lt; 7]) # =&amp;gt; [0, 1, 4, 9, 16, 25, 36] 将列表里小于等于20000数">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-06-13T09:58:42.515Z">
+<meta property="og:updated_time" content="2018-06-20T06:15:04.299Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSV">
+<meta name="twitter:title" content="虾米吃大鱼">
+<meta name="twitter:description" content="类表推导式 打印0~9的平方。 1print([x * x for x in range(10)]) # =&amp;gt; [0, 1, 4, 9, 16, 25, 36, 49, 64, 81] 打印0~6的平方。 1print([x * x for x in range(10) if x &amp;lt; 7]) # =&amp;gt; [0, 1, 4, 9, 16, 25, 36] 将列表里小于等于20000数">
     
 
     
@@ -132,25 +135,15 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-CSV" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-推导式" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
-        
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-        CSV
-        </h1>
-    
-
-            </header>
         
         
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/06/13/CSV/" class="article-date">
-            <time datetime="2018-06-13T06:01:14.000Z" itemprop="datePublished">2018-06-13</time>
+        <a href="/2018/06/20/推导式/" class="article-date">
+            <time datetime="2018-06-20T06:16:57.112Z" itemprop="datePublished">2018-06-20</time>
         </a>
     </div>
 
@@ -159,14 +152,27 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p><strong>类表推导式</strong></p>
+<p>打印0~9的平方。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print([x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>)]) <span class="comment"># =&gt; [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span></span><br></pre></td></tr></table></figure>
+<p>打印0~6的平方。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print([x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>) <span class="keyword">if</span> x &lt; <span class="number">7</span>]) <span class="comment"># =&gt; [0, 1, 4, 9, 16, 25, 36]</span></span><br></pre></td></tr></table></figure>
+<p>将列表里小于等于20000数据全部加1000。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">salary_list = [<span class="number">13000</span>,<span class="number">12700</span>,<span class="number">15000</span>,<span class="number">14000</span>,<span class="number">25000</span>,<span class="number">16000</span>,<span class="number">18000</span>,<span class="number">22000</span>,<span class="number">32000</span>]</span><br><span class="line">res = [ var + <span class="number">1000</span> <span class="keyword">for</span> var <span class="keyword">in</span> salary_list <span class="keyword">if</span> var &lt;= <span class="number">20000</span> ]</span><br><span class="line">salary_list[:len(res)] = res</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<p><strong>字典推导式</strong></p>
+<p>将字典key和value交换</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DictIn=&#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>, <span class="string">"c"</span>:<span class="number">3</span>, <span class="string">"d"</span>:<span class="number">4</span>&#125;</span><br><span class="line">DictOut=&#123;v:k <span class="keyword">for</span> k,v <span class="keyword">in</span> DictIn.items()&#125;</span><br><span class="line">print(DictOut) <span class="comment"># =&gt; &#123;1: 'a', 2: 'b', 3: 'c', 4: 'd'&#125;</span></span><br></pre></td></tr></table></figure>
+<p><strong>集合推导式</strong></p>
+<p>集合推导式跟列表推导式差不多，都是对一个列表的元素全部执行相同的操作， 但集合是一种无重复无序的序列 区别：跟列表推到式的区别在于：1.不使用中括号，使用大括号；2.结果中无重复；3.结果是一个set()集合，集合里面是一个序列 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">squared = &#123; i * <span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>]&#125;</span><br><span class="line">print(squared) <span class="comment"># =&gt; &#123;2, 4&#125;</span></span><br></pre></td></tr></table></figure>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2018/06/13/CSV/" data-id="cjimq76am0001hgqhzjaswai8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/06/20/推导式/" data-id="cjimq76ah0000hgqhkdg643bz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -303,20 +309,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/06/14/面向对象属性探究/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            面向对象属性探究
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/06/13/编码/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/06/14/面向对象属性探究/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">编码</p>
+        <p class="article-nav-title">面向对象属性探究</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -502,7 +498,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2018/06/13/CSV/';
+    var disqus_url = 'http://yoursite.com/2018/06/20/推导式/';
     
     (function() {
     var dsq = document.createElement('script');
