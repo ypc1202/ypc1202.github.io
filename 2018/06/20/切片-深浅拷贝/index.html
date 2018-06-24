@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="虾米吃大鱼">
 <meta property="og:description" content="不可变数据的片选深浅拷贝 123456789101112131415161718192021222324import copystr1 = &quot;hello world&quot;str2 = str1str3 = str1[:]str4 = copy.copy(str1)str5 = copy.deepcopy(str1)print(id(str1))  # 97509688print(id(str2))">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-06-20T08:03:42.981Z">
+<meta property="og:updated_time" content="2018-06-20T12:35:17.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="切片&amp;深浅拷贝">
 <meta name="twitter:description" content="不可变数据的片选深浅拷贝 123456789101112131415161718192021222324import copystr1 = &quot;hello world&quot;str2 = str1str3 = str1[:]str4 = copy.copy(str1)str5 = copy.deepcopy(str1)print(id(str1))  # 97509688print(id(str2))">
@@ -164,8 +164,16 @@
         <div class="article-entry" itemprop="articleBody">
             <p><strong>不可变数据的片选深浅拷贝</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">str1 = <span class="string">"hello world"</span></span><br><span class="line">str2 = str1</span><br><span class="line">str3 = str1[:]</span><br><span class="line">str4 = copy.copy(str1)</span><br><span class="line">str5 = copy.deepcopy(str1)</span><br><span class="line">print(id(str1))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str2))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str3))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str4))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str5))  <span class="comment"># 97509688</span></span><br><span class="line"></span><br><span class="line">str1 = <span class="string">"hello china"</span></span><br><span class="line">print(str1)  <span class="comment"># hello china</span></span><br><span class="line">print(str2)  <span class="comment"># hello world</span></span><br><span class="line">print(str3)  <span class="comment"># hello world</span></span><br><span class="line">print(str4)  <span class="comment"># hello world</span></span><br><span class="line">print(str5)  <span class="comment"># hello world</span></span><br><span class="line"></span><br><span class="line">print(id(str1))  <span class="comment"># 97509728</span></span><br><span class="line">print(id(str2))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str3))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str4))  <span class="comment"># 97509688</span></span><br><span class="line">print(id(str5))  <span class="comment"># 97509688</span></span><br></pre></td></tr></table></figure>
+<p>不可变数据的片选</p>
 <p><strong>可变数据的片选深浅拷贝</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]]]</span><br><span class="line">list2 = list1</span><br><span class="line">list3 = list1[:]</span><br><span class="line">list4 = copy.copy(list1)</span><br><span class="line">list5 = copy.deepcopy(list1)</span><br><span class="line">print(id(list1))  <span class="comment"># 96760976</span></span><br><span class="line">print(id(list2))  <span class="comment"># 96760976</span></span><br><span class="line">print(id(list3))  <span class="comment"># 96718120</span></span><br><span class="line">print(id(list4))  <span class="comment"># 95303320</span></span><br><span class="line">print(id(list5))  <span class="comment"># 96760336</span></span><br><span class="line"></span><br><span class="line">list1[<span class="number">0</span>] = <span class="string">'a'</span></span><br><span class="line">list1[<span class="number">3</span>][<span class="number">0</span>] = <span class="string">'a'</span></span><br><span class="line">print(list1)  <span class="comment"># ['a', 2, 3, ['a', 5, 6, [7, 8, 9]]]</span></span><br><span class="line">print(list2)  <span class="comment"># ['a', 2, 3, ['a', 5, 6, [7, 8, 9]]]</span></span><br><span class="line">print(list3)  <span class="comment"># [1, 2, 3, ['a', 5, 6, [7, 8, 9]]]</span></span><br><span class="line">print(list4)  <span class="comment"># [1, 2, 3, ['a', 5, 6, [7, 8, 9]]]</span></span><br><span class="line">print(list5)  <span class="comment"># [1, 2, 3, [4, 5, 6, [7, 8, 9]]]</span></span><br><span class="line"></span><br><span class="line">print(id(list1))  <span class="comment"># 96760976</span></span><br><span class="line">print(id(list2))  <span class="comment"># 96760976</span></span><br><span class="line">print(id(list3))  <span class="comment"># 96718120</span></span><br><span class="line">print(id(list4))  <span class="comment"># 95303320</span></span><br><span class="line">print(id(list5))  <span class="comment"># 96760336</span></span><br></pre></td></tr></table></figure>
+<p><strong>列表切头操作</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> list1:</span><br><span class="line">    <span class="keyword">if</span>(len(list1) &gt;= <span class="number">2</span>):</span><br><span class="line">        list1 = list1[<span class="number">1</span>:]</span><br><span class="line">        print(str(list1)+(<span class="number">10</span>-len(list1))*<span class="number">3</span>*<span class="string">" "</span>+str(id(list1)))</span><br><span class="line">        </span><br><span class="line"><span class="comment"># [2, 3, 4, 5, 6, 7, 8, 9, 10]   84309656</span></span><br><span class="line"><span class="comment"># [3, 4, 5, 6, 7, 8, 9, 10]      84310016</span></span><br><span class="line"><span class="comment"># [4, 5, 6, 7, 8, 9, 10]         84309656</span></span><br><span class="line"><span class="comment"># [5, 6, 7, 8, 9, 10]            84310016</span></span><br><span class="line"><span class="comment"># [6, 7, 8, 9, 10]               84309656</span></span><br><span class="line"><span class="comment"># [7, 8, 9, 10]                  84310016</span></span><br><span class="line"><span class="comment"># [8, 9, 10]                     84309656</span></span><br><span class="line"><span class="comment"># [9, 10]                        84310016</span></span><br><span class="line"><span class="comment"># [10]                           84309656</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 问:好奇为什么列表地址会有相同的?</span></span><br><span class="line"><span class="comment"># 亳州-二狗-sql维护答:因为砍头操作不是删元素，赋值操作结束之后原列表被覆盖.</span></span><br></pre></td></tr></table></figure>
+<p><strong>列表切屁股操作</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> list1:</span><br><span class="line">    <span class="keyword">if</span>(len(list1) &gt;= <span class="number">2</span>):</span><br><span class="line">        list1 = list1[:<span class="number">-1</span>]</span><br><span class="line">        print(str(list1)+(<span class="number">10</span>-len(list1))*<span class="number">3</span>*<span class="string">" "</span>+str(id(list1)))</span><br><span class="line">        <span class="comment"># print(id(list1))</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># [1, 2, 3, 4, 5, 6, 7, 8, 9]   93943488</span></span><br><span class="line"><span class="comment"># [1, 2, 3, 4, 5, 6, 7, 8]      93943848</span></span><br><span class="line"><span class="comment"># [1, 2, 3, 4, 5, 6, 7]         93943488</span></span><br><span class="line"><span class="comment"># [1, 2, 3, 4, 5, 6]            93943848</span></span><br><span class="line"><span class="comment"># [1, 2, 3, 4, 5]               93943488</span></span><br><span class="line"><span class="comment"># [1, 2, 3, 4]                  93943848</span></span><br><span class="line"><span class="comment"># [1, 2, 3]                     93943488</span></span><br><span class="line"><span class="comment"># [1, 2]                        93943848</span></span><br><span class="line"><span class="comment"># [1]                           93943488</span></span><br></pre></td></tr></table></figure>
+<p><strong>片选</strong></p>
+<p>一道公司的面试题”给出随机的一段字符,当遇到”\n”时,抛弃之前的字符,输出”\n”之后的字符,例如cadddd\nasdas\nfasadas,应输出fasadas.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aas = <span class="string">"cadddd\nasdas\nfasadas"</span></span><br><span class="line">print(aas[-aas[::<span class="number">-1</span>].find(<span class="string">"\n"</span>):])</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -173,7 +181,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2018/06/20/切片-深浅拷贝/" data-id="cjin0zcrv000228qhel88j82j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/06/20/切片-深浅拷贝/" data-id="cjiskt40a0003t4qhvzds990x" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -345,6 +353,26 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/06/24/OS文件操作/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/06/24/OS文件操作/" class="title">OS文件操作</a></p>
+                            <p class="item-date"><time datetime="2018-06-24T08:32:14.000Z" itemprop="datePublished">2018-06-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/06/20/python查看源码/" class="thumbnail">
     
     
@@ -422,26 +450,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/06/13/CSV/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/06/13/CSV/" class="title">CSV</a></p>
-                            <p class="item-date"><time datetime="2018-06-13T06:01:14.000Z" itemprop="datePublished">2018-06-13</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -454,7 +462,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">8</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">9</span></li></ul>
         </div>
     </div>
 
