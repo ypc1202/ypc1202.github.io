@@ -6,25 +6,23 @@
     
 
     
-    <title>A0002系列文章 -- PythonOpenCV教程 | 虾米吃大鱼</title>
+    <title>A0003系列文章 -- OpenCV学习笔记 | 虾米吃大鱼</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="Python环境搭建之OpenCV https://www.cnblogs.com/lclblack/p/6377710.html Python环境搭建之OpenGL http://www.cnblogs.com/lclblack/p/6378212.html 报错缺少VS14………/lib——–&amp;gt;Microsoft Visual C++ 14.0 is required. 的解决办法  h">
+    <meta name="description" content="OpenCV学习笔记（一）——安装配置、第一个程序  OpenCV学习笔记（二）——新版本模块结构  OpenCV学习笔记（三）——Mat，图像的新容器  OpenCV学习笔记（四）——新版本的数据结构core  OpenCV学习笔记（五）——2.0以上版本和以下版本的数据兼容  OpenCV学习笔记（六）——对XML和YAML文件实现I/O操作  OpenCV学习笔记（七）——图像处理之滤波器I">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A0002系列文章 -- PythonOpenCV教程">
-<meta property="og:url" content="http://yoursite.com/2018/07/01/A0002_系列文章-PythonOpenCV教程/index.html">
+<meta property="og:title" content="A0003系列文章 -- OpenCV学习笔记">
+<meta property="og:url" content="http://yoursite.com/2018/07/01/A0003___系列文章-OpenCV学习笔记/index.html">
 <meta property="og:site_name" content="虾米吃大鱼">
-<meta property="og:description" content="Python环境搭建之OpenCV https://www.cnblogs.com/lclblack/p/6377710.html Python环境搭建之OpenGL http://www.cnblogs.com/lclblack/p/6378212.html 报错缺少VS14………/lib——–&amp;gt;Microsoft Visual C++ 14.0 is required. 的解决办法  h">
+<meta property="og:description" content="OpenCV学习笔记（一）——安装配置、第一个程序  OpenCV学习笔记（二）——新版本模块结构  OpenCV学习笔记（三）——Mat，图像的新容器  OpenCV学习笔记（四）——新版本的数据结构core  OpenCV学习笔记（五）——2.0以上版本和以下版本的数据兼容  OpenCV学习笔记（六）——对XML和YAML文件实现I/O操作  OpenCV学习笔记（七）——图像处理之滤波器I">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://yoursite.com/2018/07/01/A0002_系列文章-PythonOpenCV教程/C:/Users/ADMINI~1/AppData/Local/Temp/1530444484606.png">
-<meta property="og:updated_time" content="2018-07-01T11:30:33.723Z">
+<meta property="og:updated_time" content="2018-07-01T06:28:16.344Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A0002系列文章 -- PythonOpenCV教程">
-<meta name="twitter:description" content="Python环境搭建之OpenCV https://www.cnblogs.com/lclblack/p/6377710.html Python环境搭建之OpenGL http://www.cnblogs.com/lclblack/p/6378212.html 报错缺少VS14………/lib——–&amp;gt;Microsoft Visual C++ 14.0 is required. 的解决办法  h">
-<meta name="twitter:image" content="http://yoursite.com/2018/07/01/A0002_系列文章-PythonOpenCV教程/C:/Users/ADMINI~1/AppData/Local/Temp/1530444484606.png">
+<meta name="twitter:title" content="A0003系列文章 -- OpenCV学习笔记">
+<meta name="twitter:description" content="OpenCV学习笔记（一）——安装配置、第一个程序  OpenCV学习笔记（二）——新版本模块结构  OpenCV学习笔记（三）——Mat，图像的新容器  OpenCV学习笔记（四）——新版本的数据结构core  OpenCV学习笔记（五）——2.0以上版本和以下版本的数据兼容  OpenCV学习笔记（六）——对XML和YAML文件实现I/O操作  OpenCV学习笔记（七）——图像处理之滤波器I">
     
 
     
@@ -137,14 +135,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-A0002_系列文章-PythonOpenCV教程" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-A0003___系列文章-OpenCV学习笔记" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        A0002系列文章 -- PythonOpenCV教程
+        A0003系列文章 -- OpenCV学习笔记
         </h1>
     
 
@@ -154,8 +152,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/07/01/A0002_系列文章-PythonOpenCV教程/" class="article-date">
-            <time datetime="2018-07-01T06:08:52.000Z" itemprop="datePublished">2018-07-01</time>
+        <a href="/2018/07/01/A0003___系列文章-OpenCV学习笔记/" class="article-date">
+            <time datetime="2018-07-01T06:22:55.000Z" itemprop="datePublished">2018-07-01</time>
         </a>
     </div>
 
@@ -164,23 +162,60 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p><strong><a href="https://www.cnblogs.com/lclblack/p/6377710.html" target="_blank" rel="noopener">Python环境搭建之OpenCV</a></strong></p>
-<p><strong><a href="https://www.cnblogs.com/lclblack/p/6377710.html" target="_blank" rel="noopener">https://www.cnblogs.com/lclblack/p/6377710.html</a></strong></p>
-<p><strong><a href="https://www.cnblogs.com/lclblack/p/6378212.html" target="_blank" rel="noopener">Python环境搭建之OpenGL</a></strong></p>
-<p><strong><a href="http://www.cnblogs.com/lclblack/p/6378212.html" target="_blank" rel="noopener">http://www.cnblogs.com/lclblack/p/6378212.html</a></strong></p>
-<p><strong>报错缺少VS14………/lib——–&gt;Microsoft Visual C++ 14.0 is required. 的解决办法</strong></p>
-<p> <a href="https://blog.csdn.net/woay2008/article/details/79905627" target="_blank" rel="noopener">https://blog.csdn.net/woay2008/article/details/79905627</a></p>
-<p><a href="https://blog.csdn.net/TH_NUM/article/details/77095177" target="_blank" rel="noopener">https://blog.csdn.net/TH_NUM/article/details/77095177</a></p>
-<p><strong>解决后</strong></p>
-<p><strong>运行后报错</strong></p>
-<p><strong>OpenGL.error.NullFunctionError: Attempt to call an undefined function glutInit, check for bool(glutInit) before calling</strong></p>
-<p><strong>原因</strong></p>
-<p><strong>如果是32位系统,可以直接使用pip命令:pip install pyopengl 应为这个命令默认安装32位的(别人说的,自己试过)</strong></p>
-<p><strong>如果提示:’pip’不是内部或外部命令,也不是可运行的程序或批处理文件将python安装目录下的scripts目录(例如D:/Python27/Scripts)添加到系统环境变量path里,注意前加分号。再执行该命令也可以到网址下载安装版本,不过选择适合自己系统的版本 <a href="https://pypi.python.org/pypi/PyOpenGL" target="_blank" rel="noopener">https://pypi.python.org/pypi/PyOpenGL</a></strong></p>
-<p><strong>(2)如果是64位的系统,可以到这个网址下载符合已安装Python的版本,比如:</strong></p>
-<p><strong>PyOpenGL_accelerate‑3.1.1‑cp36‑cp36m‑win_amd64.whl cp36指的是python3.6以上的版本 amd64指的是64位系统(大概是这个样子)然后执行pip命令: pip install PyOpenGL_accelerate‑3.1.1‑cp36‑cp36m‑win_amd64.whl</strong></p>
-<p><strong>后来发现还是不行 发现时python版本装错了本应该装64位的装成了32位</strong></p>
-<p><img src="/2018/07/01/A0002_系列文章-PythonOpenCV教程/C:/Users\ADMINI~1\AppData\Local\Temp\1530444484606.png" alt="1530444484606"></p>
+            <p><a href="http://blog.csdn.net/yang_xian521/article/details/6894228" target="_blank" rel="noopener">OpenCV学习笔记（一）——安装配置、第一个程序</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6903855" target="_blank" rel="noopener">OpenCV学习笔记（二）——新版本模块结构</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6894716" target="_blank" rel="noopener">OpenCV学习笔记（三）——Mat，图像的新容器</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6905244" target="_blank" rel="noopener">OpenCV学习笔记（四）——新版本的数据结构core</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6897750" target="_blank" rel="noopener">OpenCV学习笔记（五）——2.0以上版本和以下版本的数据兼容</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6897684" target="_blank" rel="noopener">OpenCV学习笔记（六）——对XML和YAML文件实现I/O操作</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6906960" target="_blank" rel="noopener">OpenCV学习笔记（七）——图像处理之滤波器ImgProc</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6927773" target="_blank" rel="noopener">OpenCV学习笔记（八）——图像处理之直方图ImgProc</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6901762" target="_blank" rel="noopener">OpenCV学习笔记（九）——2维特征Feature2D</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6900901" target="_blank" rel="noopener">OpenCV学习笔记（十）——图形交互和媒体接口HighGUI</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6905106" target="_blank" rel="noopener">OpenCV学习笔记（十一）——谈谈像素的类型和对Templates的限制使用</a></p>
+<p><a href="http://blog.csdn.net/yang_xian521/article/details/6931385" target="_blank" rel="noopener">OpenCV学习笔记（十二）——随机数产生器RNG</a></p>
+<p>  <a href="http://blog.csdn.net/yang_xian521/article/details/6942194" target="_blank" rel="noopener">OpenCV学习笔记（十三）——模板匹配</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6922798" target="_blank" rel="noopener">OpenCV学习笔记（十四）——图像结构分析与形状描述ImgProc</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6915608" target="_blank" rel="noopener">OpenCV学习笔记（十六）——CamShift研究</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6909242" target="_blank" rel="noopener">OpenCV学习笔记（十五）——摄像机的标定和3D重建calib3D</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6925704" target="_blank" rel="noopener">OpenCV学习笔记（十九）——浅尝contrib</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6927411" target="_blank" rel="noopener">OpenCV学习笔记（二十）——手势识别</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6948929" target="_blank" rel="noopener">OpenCV学习笔记（十七）——运动分析和物体跟踪Video</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7010475" target="_blank" rel="noopener">OpenCV学习笔记（十八）——图像的各种变换（cvtColor*+）imgproc</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7019812" target="_blank" rel="noopener">OpenCV学习笔记（二十一）——绘图函数core</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6928131" target="_blank" rel="noopener">OpenCV学习笔记（二十二）——粒子滤波跟踪方法</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6953261" target="_blank" rel="noopener">OpenCV学习笔记（二十三）——OpenCV的GUI之凤凰涅槃Qt</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6967515" target="_blank" rel="noopener">OpenCV学习笔记（二十四）——初探机器学习库ml</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6968012" target="_blank" rel="noopener">OpenCV学习笔记（二十五）——OpenCV图形界面设计Qt+VS2008</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6969904" target="_blank" rel="noopener">OpenCV学习笔记（二十六）——小试SVM算法ml</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6973667" target="_blank" rel="noopener">OpenCV学习笔记（二十七）——基于级联分类器的目标检测objdect</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6987447" target="_blank" rel="noopener">OpenCV学习笔记（二十八）——光流法对运动目标跟踪Video</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/6991002" target="_blank" rel="noopener">OpenCV学习笔记（二十九）——视频前景的提取Video</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7012708" target="_blank" rel="noopener">OpenCV学习笔记（三十）——解开VideoInput面纱highgui</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7022701" target="_blank" rel="noopener">OpenCV学习笔记（三十一）——让demo在他人电脑跑起来</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7027190" target="_blank" rel="noopener">OpenCV学习笔记（三十二）——制作静态库的demo，没有dll也能hold住</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7031030" target="_blank" rel="noopener">OpenCV学习笔记（三十三）——用haar特征训练自己的分类器（再做手势检测）</a><a href="http://blog.csdn.net/yang_xian521/article/details/7041566" target="_blank" rel="noopener">OpenCV学习笔记（三十四）——OpenCV路在何方</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7042687" target="_blank" rel="noopener">OpenCV学习笔记（三十五）——用Qt做摄像头读取</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7050398" target="_blank" rel="noopener">OpenCV学习笔记（三十六）——Kalman滤波做运动目标跟踪</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7088102" target="_blank" rel="noopener">OpenCV学习笔记（三十七）——实用函数、系统函数、宏core</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7095728" target="_blank" rel="noopener">OpenCV学习笔记（三十八）——显示当前FPS</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7107072" target="_blank" rel="noopener">OpenCV学习笔记（三十九）——再谈OpenCV的数据结构，Mat是如此强大</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7107786" target="_blank" rel="noopener">OpenCV学习笔记（四十）——再谈OpenCV数据结构Mat详解</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7108387" target="_blank" rel="noopener">OpenCV学习笔记（四十一）——再看基础数据结构core</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7161335" target="_blank" rel="noopener">OpenCV学习笔记（四十二）——Mat数据操作之普通青年、文艺青年、暴力青年</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7182185" target="_blank" rel="noopener">OpenCV学习笔记（四十三）——存取像素值操作汇总core</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7249532" target="_blank" rel="noopener">OpenCV学习笔记（四十四）——初探GPU</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7325805" target="_blank" rel="noopener">OpenCV学习笔记（四十五）——小试随机森林（random forest）算法ml</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7411438" target="_blank" rel="noopener">OpenCV学习笔记（四十六）——FAST特征点检测features2D</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7440190" target="_blank" rel="noopener">OpenCV学习笔记（四十七）——VideoWriter生成视频流highgui</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7445536" target="_blank" rel="noopener">OpenCV学习笔记（四十八）——PCA算法实现core</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7531897" target="_blank" rel="noopener">OpenCV学习笔记（四十九）——号外！OpenCV-2.4.0 release 千呼万唤始出来</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7533922" target="_blank" rel="noopener">OpenCV学习笔记（五十）——Algorithm类介绍（core）</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7589431" target="_blank" rel="noopener">OpenCV学习笔记（五十一）——imge stitching图像拼接stitching</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7636653" target="_blank" rel="noopener">OpenCV学习笔记（五十二）——号外：OpenCV 2.4.1 又出来了。。。。。</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7732835" target="_blank" rel="noopener">OpenCV学习笔记（五十三）——新版本2.4.2简介&amp;FREAK和ORB特征描述子效果对比features2d</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7735224" target="_blank" rel="noopener">OpenCV学习笔记（五十四）——概述FaceRecognizer人脸识别类contrib</a></p>
+<p> <a href="http://blog.csdn.net/yang_xian521/article/details/7736955" target="_blank" rel="noopener">OpenCV学习笔记（五十五）——用OpenCV做人脸识别和性别识别contrib</a></p>
 
         </div>
         <footer class="article-footer">
@@ -188,7 +223,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2018/07/01/A0002_系列文章-PythonOpenCV教程/" data-id="cjj6qabvg0000ycqhpy5cym3v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/01/A0003___系列文章-OpenCV学习笔记/" data-id="cjj6qf0ri0002tgqhap2bcl0j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -325,20 +360,20 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/07/01/A0003_系列文章-OpenCV学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/07/01/A0006___SWD/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            A0003系列文章 -- OpenCV学习笔记
+            D0001--SWD
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2018/06/30/A0001_系列文章-OpenCV入门教程/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/07/01/A0002___系列文章-PythonOpenCV教程/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">A0001系列文章 -- OpenCV入门教程</p>
+        <p class="article-nav-title">A0002系列文章 -- PythonOpenCV教程</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -360,7 +395,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/07/01/A0006-SWD/" class="thumbnail">
+                            <a href="/2018/07/01/A0006___SWD/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -372,7 +407,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/07/01/A0006-SWD/" class="title">D0001--SWD</a></p>
+                            <p class="item-title"><a href="/2018/07/01/A0006___SWD/" class="title">D0001--SWD</a></p>
                             <p class="item-date"><time datetime="2018-07-01T08:22:15.000Z" itemprop="datePublished">2018-07-01</time></p>
                         </div>
                     </li>
@@ -380,7 +415,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/07/01/A0003_系列文章-OpenCV学习笔记/" class="thumbnail">
+                            <a href="/2018/07/01/A0003___系列文章-OpenCV学习笔记/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -392,7 +427,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/07/01/A0003_系列文章-OpenCV学习笔记/" class="title">A0003系列文章 -- OpenCV学习笔记</a></p>
+                            <p class="item-title"><a href="/2018/07/01/A0003___系列文章-OpenCV学习笔记/" class="title">A0003系列文章 -- OpenCV学习笔记</a></p>
                             <p class="item-date"><time datetime="2018-07-01T06:22:55.000Z" itemprop="datePublished">2018-07-01</time></p>
                         </div>
                     </li>
@@ -400,10 +435,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/07/01/A0002_系列文章-PythonOpenCV教程/" class="thumbnail">
+                            <a href="/2018/07/01/A0002___系列文章-PythonOpenCV教程/" class="thumbnail">
     
     
-        <span style="background-image:url(/2018/07/01/A0002_系列文章-PythonOpenCV教程/C:/Users\ADMINI~1\AppData\Local\Temp\1530444484606.png)" alt="A0002系列文章 -- PythonOpenCV教程" class="thumbnail-image"></span>
+        <span style="background-image:url(/2018/07/01/A0002___系列文章-PythonOpenCV教程/C:/Users\ADMINI~1\AppData\Local\Temp\1530444484606.png)" alt="A0002系列文章 -- PythonOpenCV教程" class="thumbnail-image"></span>
     
     
 </a>
@@ -412,7 +447,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/07/01/A0002_系列文章-PythonOpenCV教程/" class="title">A0002系列文章 -- PythonOpenCV教程</a></p>
+                            <p class="item-title"><a href="/2018/07/01/A0002___系列文章-PythonOpenCV教程/" class="title">A0002系列文章 -- PythonOpenCV教程</a></p>
                             <p class="item-date"><time datetime="2018-07-01T06:08:52.000Z" itemprop="datePublished">2018-07-01</time></p>
                         </div>
                     </li>
@@ -420,7 +455,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/06/30/A0001_系列文章-OpenCV入门教程/" class="thumbnail">
+                            <a href="/2018/06/30/A0001___系列文章-OpenCV入门教程/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -432,7 +467,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/06/30/A0001_系列文章-OpenCV入门教程/" class="title">A0001系列文章 -- OpenCV入门教程</a></p>
+                            <p class="item-title"><a href="/2018/06/30/A0001___系列文章-OpenCV入门教程/" class="title">A0001系列文章 -- OpenCV入门教程</a></p>
                             <p class="item-date"><time datetime="2018-06-30T09:58:53.000Z" itemprop="datePublished">2018-06-30</time></p>
                         </div>
                     </li>
@@ -440,7 +475,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/06/30/P0001_二-三阶段考试/" class="thumbnail">
+                            <a href="/2018/06/30/P0001___二-三阶段考试/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -452,7 +487,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/06/30/P0001_二-三阶段考试/" class="title">P0001-二-三阶段考试</a></p>
+                            <p class="item-title"><a href="/2018/06/30/P0001___二-三阶段考试/" class="title">P0001-二-三阶段考试</a></p>
                             <p class="item-date"><time datetime="2018-06-30T07:46:50.000Z" itemprop="datePublished">2018-06-30</time></p>
                         </div>
                     </li>
@@ -524,7 +559,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2018/07/01/A0002_系列文章-PythonOpenCV教程/';
+    var disqus_url = 'http://yoursite.com/2018/07/01/A0003___系列文章-OpenCV学习笔记/';
     
     (function() {
     var dsq = document.createElement('script');
