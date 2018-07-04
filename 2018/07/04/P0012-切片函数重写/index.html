@@ -6,23 +6,23 @@
     
 
     
-    <title>A0006 SWD参考资料 | 虾米吃大鱼</title>
+    <title>P0012 切片函数重写 | 虾米吃大鱼</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="转载https://blog.csdn.net/baiyibin0530/article/details/51682179 参考https://blog.csdn.net/u010066882/article/details/56030473 参考https://wenku.baidu.com/view/49a9277aeff9aef8951e061f.html 以下我的模拟SWD接口的板子简称">
+    <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283class myList2(list):    #我们自定义个索引从1开始的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A0006 SWD参考资料">
-<meta property="og:url" content="http://yoursite.com/2018/07/04/A0006-SWD参考资料/index.html">
+<meta property="og:title" content="P0012 切片函数重写">
+<meta property="og:url" content="http://yoursite.com/2018/07/04/P0012-切片函数重写/index.html">
 <meta property="og:site_name" content="虾米吃大鱼">
-<meta property="og:description" content="转载https://blog.csdn.net/baiyibin0530/article/details/51682179 参考https://blog.csdn.net/u010066882/article/details/56030473 参考https://wenku.baidu.com/view/49a9277aeff9aef8951e061f.html 以下我的模拟SWD接口的板子简称">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283class myList2(list):    #我们自定义个索引从1开始的。">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-07-04T06:35:32.103Z">
+<meta property="og:updated_time" content="2018-07-04T06:57:33.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A0006 SWD参考资料">
-<meta name="twitter:description" content="转载https://blog.csdn.net/baiyibin0530/article/details/51682179 参考https://blog.csdn.net/u010066882/article/details/56030473 参考https://wenku.baidu.com/view/49a9277aeff9aef8951e061f.html 以下我的模拟SWD接口的板子简称">
+<meta name="twitter:title" content="P0012 切片函数重写">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283class myList2(list):    #我们自定义个索引从1开始的。">
     
 
     
@@ -135,14 +135,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-A0006-SWD参考资料" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-P0012-切片函数重写" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        A0006 SWD参考资料
+        P0012 切片函数重写
         </h1>
     
 
@@ -152,8 +152,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/07/04/A0006-SWD参考资料/" class="article-date">
-            <time datetime="2018-07-04T06:28:59.000Z" itemprop="datePublished">2018-07-04</time>
+        <a href="/2018/07/04/P0012-切片函数重写/" class="article-date">
+            <time datetime="2018-07-04T06:56:55.000Z" itemprop="datePublished">2018-07-04</time>
         </a>
     </div>
 
@@ -162,44 +162,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p> 转载<a href="https://blog.csdn.net/baiyibin0530/article/details/51682179" target="_blank" rel="noopener">https://blog.csdn.net/baiyibin0530/article/details/51682179</a></p>
-<p>参考<a href="https://blog.csdn.net/u010066882/article/details/56030473" target="_blank" rel="noopener">https://blog.csdn.net/u010066882/article/details/56030473</a></p>
-<p>参考<a href="https://wenku.baidu.com/view/49a9277aeff9aef8951e061f.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/49a9277aeff9aef8951e061f.html</a></p>
-<p>以下我的模拟SWD接口的板子简称为Host,目标MCU(即我要连接的板子)简称为Target。</p>
-<p>SWD协议</p>
-<p>​         故名思议，串行总线调试接口。我们需要3根线与目标MCU相连，SWDIO,SWDCLK和GND。</p>
-<p>​        -SWDIO 为双向Data口，主机到目标的数据传送。</p>
-<p>​        -SWDCLK 为时钟口，主机驱动。</p>
-<p>​        -GND  GND脚。</p>
-<p>​        首先参考《ARM Debug Interface V5》(注：该文档已有更新版本，并且对V5版本做了勘误)，对一些相关的协议相关说明有了较浅的认识。那接下来便找了个带SWD接口的板子，我这首先选了STM32F030，因为以后可以为生产线做离线编程器，当然随后也出现了一些问题，下文会说明。</p>
-<p>​        连上相关物理连线，开始折腾。</p>
-<p>​        看手册中有几个相对较重要的时序说明。</p>
-<p>Trn-Trn：即Line turn-round，当总线上的数据传输方向发送改变时（比如由Host-&gt;Target变为Target-&gt;Host），需要插入Trn，Trn为一个CLK时序，关于对于Trn的理解自己也有些疑问。</p>
-<p>Idle  cycles：在一个总线完成后，可以立即进入下一个总线操作或者是勒令总线进入Idle 状态，此时可以插入Idle cycle。在这我用连续送出8个’0b0’来使得总线进入Idle状态。</p>
-<p>Parity ：校验位，这个比较简单。分两个内容对命令头进行校验和对数据进行校验。命令头下文会说明。数据校验是对Data的0b0-0b31进行校验，如果‘1’的个数为奇数那校验位就为‘0b1’,如果‘0b1’的个数为偶数校验位就为‘0b0’。</p>
-<p>​        理解了这几个，我们接下来看读写命令。</p>
-<p>​        每个读写命令之前都会有个Host-&gt;Target的数据头。每个数据头为1Byte.</p>
-<p>-Start     起始位，始终为1，这也是Target判断总线从空闲状态退出的条件。</p>
-<p>-APnDP  选择要访问的是DP寄存器还是AP寄存器。</p>
-<p>- Rnw    选择是读还是写。</p>
-<p>-A[2:3]   DP或者AP寄存器的地址，注意它是低位在前。比如寄存器DP寄存器 Select 它的地址为0x08，那这儿的A为C(0b1000)，显然A[2:3]就为01。</p>
-<p>-Praity   校验位，它是APnDP、RnW和A[2:3]共4个bit的校验位。</p>
-<p>-Stop    停止位。始终为0。</p>
-<p>-Park     该位确切来说应该始终为1，ADI V5中描述此位由总线上拉，但由于总线的上拉能力不足，会导致Target识别不了这个1。该勘误在ADI V5.2中有说明。</p>
-<p>读命令为数据头+Trn+ACK+RDATA+Parity构成，但实际操作发现Trn这位是忽略掉的（所以不知道对此Trn的理解是否有误），及发送完数据头后立即读入ACK，判断Target是否正确响应。</p>
-<p>写命令为数据头+Trn+ACK+Trn+WDATA+Parity，在这不同的是，在写命令时必须要考虑2个Trn的位置</p>
-<p>看协议中首先在连接Target时需要进行LineReset，这个是最基础也是最最简单的命令。</p>
-<p>具体实现为首先保证Host连续送出至少50个“1”，使得Target进行Line Reset,至少插入2个Idle,然后可以读取目标板的IDR，判断Target的类型</p>
-<p>理解了整个，然后就进行操作验证，发现偶尔可以有数据ACK，继续查看手册，发现需要进行JTAG和SWD的切换操作。查看手册发现切换操作的时序如下。</p>
-<p>可以简化为先进行一次LineReset,随后发送0X79，0XE7(高字节首先传送),接着再一次LineReset，随后便可以读IDR。但是发现了问题，用此方式可以读取到STM32F103的IDR，但STM32F030不行，在ARM网站查阅相关资料，发现了这个。</p>
-<p>上图主要说在一个更早的协议中需要发送如下命令才能进行JTAG和SWD的切换。就是要发送0X6D,0XB7，尝试了下，这下能顺利读取到IDR了。疑惑的是STM32F0系列比F1出来要晚，居然用的老版本的协议？</p>
-<p>既然能够获取到IDR了，那接下来可以尝试着进行连接到AHB-AP了。用DP寄存器的SELECT来进行选择。这儿为了能够使得结果明显和确切，我选择了读取AP 0XFC 的IDR寄存器，来获取AP的特性，因为这个数据是只读的和确切的。</p>
-<p>首先要用写入DP寄存器SELECT。</p>
-<p>SELECT的具体描述可以参见ADI V5手册，在这有个说明，当时走了弯路。SELECT寄存器中有个APSEL选择位，这个是选择当前连接的AP，手册中没有详细说明它的定义。后来在另外的文档中发现该值为0x00，AHB-AP。APBANKSEL为选择需要访问的BANK地址，比如IDR寄存器的地址为0XFC，那它的BANKSEL为F，如果为TAR寄存器，那它的BANKSEL为0。</p>
-<p>连接到AHB-AP后就能进行你想要的操作了。比如我可以读取MCU的独立ID，就可以通过MEM-AP来操作。也可以对MCU进行擦除或者编程。</p>
-<p>在做编程之前，首先将MCU进入Halt状态，然后访问MCU相关FLASH控制寄存器进行读写即可。</p>
-<p>在STM32F030编程时需要注意的是STM32F030的FLASH的传输方式，我未采用Packet的传输方式。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">LineReset代码</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SwdLineReset</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  u8 i; </span><br><span class="line">  SWD_OUT;</span><br><span class="line">  SWD_DIO_H;</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">56</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">    SWD_Delay();</span><br><span class="line">    SWD_CLK_H;</span><br><span class="line">    SWD_Delay();</span><br><span class="line">    SWD_CLK_L;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">写命令头函数</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SwdSendByte</span><span class="params">(u8 dat)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  u8 i;</span><br><span class="line">  SWD_OUT;</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)</span><br><span class="line">  &#123;  </span><br><span class="line">    <span class="keyword">if</span>((dat&amp;<span class="number">0x80</span>)==<span class="number">0x80</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      SWD_DIO_H;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">       SWD_DIO_L;</span><br><span class="line">    &#125;</span><br><span class="line">    dat&lt;&lt;=<span class="number">1</span>; </span><br><span class="line">    SWD_CLK_H;</span><br><span class="line">    SWD_Delay();</span><br><span class="line">    SWD_CLK_L;</span><br><span class="line">    SWD_Delay();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">读取一个data函数</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> u32 <span class="title">SeqRead</span><span class="params">(u8 cmd)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  u32 dat=<span class="number">0</span>;</span><br><span class="line">  u8 i=<span class="number">0</span>;</span><br><span class="line">  SwdSendByte(cmd);</span><br><span class="line">  SWD_IN;</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)<span class="comment">//ack 此处需要处理判断</span></span><br><span class="line">  &#123; </span><br><span class="line">   SWD_CLK_H;</span><br><span class="line">    SWD_Delay();</span><br><span class="line">    SWD_CLK_L;</span><br><span class="line">    SWD_Delay();</span><br><span class="line">  &#125;</span><br><span class="line">dat=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">32</span>;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    dat=dat&gt;&gt;<span class="number">1</span>; </span><br><span class="line">    SWD_CLK_H;</span><br><span class="line">    SWD_Delay();</span><br><span class="line">    SWD_CLK_L;</span><br><span class="line">    <span class="keyword">if</span>(SWD_DII)</span><br><span class="line">    &#123;</span><br><span class="line">      dat|=<span class="number">0x80000000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    SWD_Delay(); </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//parity</span></span><br><span class="line">  SWD_IN; <span class="comment">//trn</span></span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)</span><br><span class="line">  &#123;</span><br><span class="line">        SWD_CLK_H;</span><br><span class="line">        SWD_Delay();</span><br><span class="line">        SWD_CLK_L;</span><br><span class="line">        SWD_Delay();</span><br><span class="line">        &#125;</span><br><span class="line">        SWD_DIO_L;</span><br><span class="line">        SWD_OUT;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">  &#123;</span><br><span class="line">        SWD_CLK_H;</span><br><span class="line">        SWD_Delay();</span><br><span class="line">        SWD_CLK_L;</span><br><span class="line">        SWD_Delay();</span><br><span class="line">        SWD_CLK_H;</span><br><span class="line">        SWD_Delay();</span><br><span class="line">        SWD_CLK_L;</span><br><span class="line">        SWD_Delay();</span><br><span class="line">        &#125;</span><br><span class="line">  SWD_IN; <span class="comment">//trn</span></span><br><span class="line">  <span class="keyword">return</span> dat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">myList2</span><span class="params">(list)</span>:</span></span><br><span class="line">    <span class="comment">#我们自定义个索引从1开始的。</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,*args)</span>:</span></span><br><span class="line">        <span class="comment"># print(args) #偷偷看下args长什么样子</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">            slice这个类型三个属性</span></span><br><span class="line"><span class="string">            start -- 起始位置 ,stop -- 结束位置,step -- 间距 </span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        start = args[<span class="number">0</span>].start </span><br><span class="line">        stop = args[<span class="number">0</span>].stop</span><br><span class="line">        step = args[<span class="number">0</span>].step</span><br><span class="line">        selfLen = len(self)</span><br><span class="line">        newList = myList2([])</span><br><span class="line">        <span class="keyword">if</span> step == <span class="keyword">None</span>:</span><br><span class="line">            step = <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> step &gt; <span class="number">0</span>: <span class="comment">#判断步长大于零，即正序</span></span><br><span class="line">            <span class="keyword">if</span> start == <span class="keyword">None</span>:</span><br><span class="line">                start = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> stop == <span class="keyword">None</span>:</span><br><span class="line">                stop = selfLen</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> start &gt;= selfLen:</span><br><span class="line">                <span class="keyword">return</span> myList2([])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> start &lt; -selfLen:</span><br><span class="line">                    start = -selfLen</span><br><span class="line">                <span class="keyword">if</span> stop &gt; selfLen:</span><br><span class="line">                    stop = selfLen</span><br><span class="line">                index = start</span><br><span class="line">                <span class="keyword">if</span> index &gt;= <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">if</span> stop &lt; <span class="number">0</span>:</span><br><span class="line">                        stop =  selfLen + stop</span><br><span class="line">                    <span class="keyword">while</span> index &lt; stop:</span><br><span class="line">                        newList.append(super().__getitem__(index))</span><br><span class="line">                        index += step</span><br><span class="line">                    <span class="keyword">return</span> newList</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">if</span> stop &gt; <span class="number">0</span>:</span><br><span class="line">                        stop =  -(selfLen - stop)</span><br><span class="line">                    <span class="keyword">while</span> index &lt; stop:</span><br><span class="line">                        newList.append(super().__getitem__(index))</span><br><span class="line">                        index += step</span><br><span class="line">                    <span class="keyword">return</span> newList</span><br><span class="line">        <span class="keyword">elif</span> step &lt; <span class="number">0</span>:<span class="comment">#判断步长小于零，即逆序</span></span><br><span class="line">            <span class="keyword">if</span> start == <span class="keyword">None</span>:</span><br><span class="line">                start = selfLen</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> stop == <span class="keyword">None</span>:</span><br><span class="line">                stop = -(selfLen+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> start &lt; -selfLen:</span><br><span class="line">                <span class="keyword">return</span> myList2([])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> start &gt;= selfLen:</span><br><span class="line">                    start = selfLen - <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> stop &lt; -(selfLen + <span class="number">1</span>) :</span><br><span class="line">                    stop = -(selfLen+<span class="number">1</span>)</span><br><span class="line">                index = start</span><br><span class="line">                <span class="keyword">if</span> index &gt;= <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">if</span> stop &lt; <span class="number">0</span>:</span><br><span class="line">                        stop =  selfLen + stop</span><br><span class="line">                    <span class="keyword">while</span> index &gt; stop:</span><br><span class="line">                        newList.append(super().__getitem__(index))</span><br><span class="line">                        index += step</span><br><span class="line">                    <span class="keyword">return</span> newList</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">if</span> stop &gt; <span class="number">0</span>:</span><br><span class="line">                        stop =  -(selfLen - stop)</span><br><span class="line">                    <span class="keyword">while</span> index &gt; stop:</span><br><span class="line">                        newList.append(super().__getitem__(index))</span><br><span class="line">                        index += step</span><br><span class="line">                    <span class="keyword">return</span> newList</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">'step cannot be zero!'</span>)</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b =  myList2([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>])</span><br><span class="line">print(b[:<span class="number">1</span>:])</span><br><span class="line"></span><br><span class="line">c = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">print(c[:<span class="number">1</span>:])</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -207,7 +170,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2018/07/04/A0006-SWD参考资料/" data-id="cjj6s3k4t0005pcqh7nja9xyq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/04/P0012-切片函数重写/" data-id="cjj6s3k5k000ipcqhhtjoavgh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -344,20 +307,20 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/07/04/A0007-编码参考资料/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/07/04/P0013-多态/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            A0007 编码参考资料
+            P0013 多态
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2018/07/04/A0005-树莓派教程/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/07/04/P0011-装饰器/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">A0005 树莓派教程</p>
+        <p class="article-nav-title">P0011 装饰器</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -543,7 +506,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2018/07/04/A0006-SWD参考资料/';
+    var disqus_url = 'http://yoursite.com/2018/07/04/P0012-切片函数重写/';
     
     (function() {
     var dsq = document.createElement('script');
