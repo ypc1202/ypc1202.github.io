@@ -6,23 +6,23 @@
     
 
     
-    <title>删除路径下所有文件和文件夹 | 虾米吃大鱼</title>
+    <title>树莓派参考资料 | 虾米吃大鱼</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="12345678910111213141516171819import osdef func(path):    if os.path.exists(path):        for item in os.listdir(path):            item = os.path.join(path, item)            if os.path.isdir(item):">
+    <meta name="description" content="树莓派3B+搭建https://blog.csdn.net/yalecaltech/article/details/79426959 初次使用树莓派并启用root管理员（登录root管理员）https://blog.csdn.net/faryang/article/details/50779767 树莓派Raspbian系统密码是多少？树莓派Raspbian系统默认登录用户名为pi，该账户默认密码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="删除路径下所有文件和文件夹">
-<meta property="og:url" content="http://yoursite.com/2018/06/24/删除路径下所有文件和文件夹/index.html">
+<meta property="og:title" content="树莓派参考资料">
+<meta property="og:url" content="http://yoursite.com/2018/06/24/A0005_树莓派参考资料/index.html">
 <meta property="og:site_name" content="虾米吃大鱼">
-<meta property="og:description" content="12345678910111213141516171819import osdef func(path):    if os.path.exists(path):        for item in os.listdir(path):            item = os.path.join(path, item)            if os.path.isdir(item):">
+<meta property="og:description" content="树莓派3B+搭建https://blog.csdn.net/yalecaltech/article/details/79426959 初次使用树莓派并启用root管理员（登录root管理员）https://blog.csdn.net/faryang/article/details/50779767 树莓派Raspbian系统密码是多少？树莓派Raspbian系统默认登录用户名为pi，该账户默认密码">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-06-24T10:19:57.516Z">
+<meta property="og:updated_time" content="2018-06-30T08:39:59.941Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="删除路径下所有文件和文件夹">
-<meta name="twitter:description" content="12345678910111213141516171819import osdef func(path):    if os.path.exists(path):        for item in os.listdir(path):            item = os.path.join(path, item)            if os.path.isdir(item):">
+<meta name="twitter:title" content="树莓派参考资料">
+<meta name="twitter:description" content="树莓派3B+搭建https://blog.csdn.net/yalecaltech/article/details/79426959 初次使用树莓派并启用root管理员（登录root管理员）https://blog.csdn.net/faryang/article/details/50779767 树莓派Raspbian系统密码是多少？树莓派Raspbian系统默认登录用户名为pi，该账户默认密码">
     
 
     
@@ -135,14 +135,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-删除路径下所有文件和文件夹" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-A0005_树莓派参考资料" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        删除路径下所有文件和文件夹
+        树莓派参考资料
         </h1>
     
 
@@ -152,8 +152,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/06/24/删除路径下所有文件和文件夹/" class="article-date">
-            <time datetime="2018-06-24T08:38:52.000Z" itemprop="datePublished">2018-06-24</time>
+        <a href="/2018/06/24/A0005_树莓派参考资料/" class="article-date">
+            <time datetime="2018-06-24T10:24:55.000Z" itemprop="datePublished">2018-06-24</time>
         </a>
     </div>
 
@@ -162,14 +162,27 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(path)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> os.path.exists(path):</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">            item = os.path.join(path, item)</span><br><span class="line">            <span class="keyword">if</span> os.path.isdir(item):</span><br><span class="line">                func(item)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                os.remove(item)</span><br><span class="line">        os.removedirs(path)  <span class="comment"># 当进入一个文件夹下发现item为空,直接把文件夹删除.</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> TypeError(<span class="string">"路径错误!"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(help(os.path.exists)/)</span></span><br><span class="line">path = input(<span class="string">"请输入路径:"</span>)</span><br><span class="line">func(path)</span><br></pre></td></tr></table></figure>
+            <p>树莓派3B+搭建<br><a href="https://blog.csdn.net/yalecaltech/article/details/79426959" target="_blank" rel="noopener">https://blog.csdn.net/yalecaltech/article/details/79426959</a></p>
+<p>初次使用树莓派并启用root管理员（登录root管理员）<br><a href="https://blog.csdn.net/faryang/article/details/50779767" target="_blank" rel="noopener">https://blog.csdn.net/faryang/article/details/50779767</a></p>
+<p>树莓派Raspbian系统密码是多少？树莓派Raspbian系统默认登录用户名为pi，该账户默认密码是raspberry（可在raspi-config中修改）。树莓派的Raspbian系统root用户默认是禁用状态，且没有密码，所以要先设置个密码，然后开启才能正常使用。</p>
+<p> 使用pi账户进行登陆命令行，执行命令：【sudo passwd root】设置root用户密码，然后在执行【sudo passwd –unlock root】开启root账户，在使用【su root】测试是否生效！</p>
+<p>重新锁定root账户可执行命令：sudo passwd –lock root</p>
+<p>Advanced IP Scanner 可以在树莓派没显示的情况下扫描到ip地址</p>
+<p>树莓派初次使用（史上最全最详细教程！！）<br><a href="https://blog.csdn.net/xyscript/article/details/65487038" target="_blank" rel="noopener">https://blog.csdn.net/xyscript/article/details/65487038</a></p>
+<p>学习笔记：使用opencv做双目测距（相机标定+立体匹配+测距）.<br><a href="https://www.cnblogs.com/daihengchen/p/5492729.html" target="_blank" rel="noopener">https://www.cnblogs.com/daihengchen/p/5492729.html</a></p>
+<p>如何安装树莓派摄像头模块<br><a href="https://linux.cn/article-3650-1.html" target="_blank" rel="noopener">https://linux.cn/article-3650-1.html</a></p>
+<p>用树莓派实现实时的人脸检测<br><a href="http://www.52pi.net/archives/1435" target="_blank" rel="noopener">http://www.52pi.net/archives/1435</a></p>
+<p>Raspbian Stretch: Install OpenCV 3 + Python on your Raspberry Pi<br><a href="https://www.pyimagesearch.com/2017/09/04/raspbian-stretch-install-opencv-3-python-on-your-raspberry-pi/" target="_blank" rel="noopener">https://www.pyimagesearch.com/2017/09/04/raspbian-stretch-install-opencv-3-python-on-your-raspberry-pi/</a></p>
+<p>opencv下载资源<br><a href="https://blog.csdn.net/yanzi1225627/article/details/47668021" target="_blank" rel="noopener">https://blog.csdn.net/yanzi1225627/article/details/47668021</a></p>
+<p>（树莓派、linux通用）OpenCV3源码方式安装教程（最新3.4.1）<strong>照着做成功的显示了图片</strong><br><a href="https://blog.csdn.net/leaves_joe/article/details/67656340" target="_blank" rel="noopener">https://blog.csdn.net/leaves_joe/article/details/67656340</a></p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2018/06/24/删除路径下所有文件和文件夹/" data-id="cjj6pza810007n4qhfsmigr31" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/06/24/A0005_树莓派参考资料/" data-id="cjj6q51eo0004wsqh7i9y05to" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -306,20 +319,20 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/06/24/树莓派参考资料/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/06/24/A0004_HEXO参考资料/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            树莓派参考资料
+            hexo参考资料
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2018/06/24/OS文件操作/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/06/24/P0007_删除路径下所有文件和文件夹/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">OS文件操作</p>
+        <p class="article-nav-title">删除路径下所有文件和文件夹</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -341,7 +354,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/07/01/D0001-SWD/" class="thumbnail">
+                            <a href="/2018/07/01/A0006-SWD/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -353,7 +366,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/07/01/D0001-SWD/" class="title">D0001--SWD</a></p>
+                            <p class="item-title"><a href="/2018/07/01/A0006-SWD/" class="title">D0001--SWD</a></p>
                             <p class="item-date"><time datetime="2018-07-01T08:22:15.000Z" itemprop="datePublished">2018-07-01</time></p>
                         </div>
                     </li>
@@ -361,7 +374,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/07/01/A0003系列文章-OpenCV学习笔记/" class="thumbnail">
+                            <a href="/2018/07/01/A0003_系列文章-OpenCV学习笔记/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -373,7 +386,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/07/01/A0003系列文章-OpenCV学习笔记/" class="title">A0003系列文章 -- OpenCV学习笔记</a></p>
+                            <p class="item-title"><a href="/2018/07/01/A0003_系列文章-OpenCV学习笔记/" class="title">A0003系列文章 -- OpenCV学习笔记</a></p>
                             <p class="item-date"><time datetime="2018-07-01T06:22:55.000Z" itemprop="datePublished">2018-07-01</time></p>
                         </div>
                     </li>
@@ -381,10 +394,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/07/01/A0002系列文章-PythonOpenCV教程/" class="thumbnail">
+                            <a href="/2018/07/01/A0002_系列文章-PythonOpenCV教程/" class="thumbnail">
     
     
-        <span style="background-image:url(/2018/07/01/A0002系列文章-PythonOpenCV教程/C:/Users\ADMINI~1\AppData\Local\Temp\1530444484606.png)" alt="A0002系列文章 -- PythonOpenCV教程" class="thumbnail-image"></span>
+        <span style="background-image:url(/2018/07/01/A0002_系列文章-PythonOpenCV教程/C:/Users\ADMINI~1\AppData\Local\Temp\1530444484606.png)" alt="A0002系列文章 -- PythonOpenCV教程" class="thumbnail-image"></span>
     
     
 </a>
@@ -393,7 +406,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/07/01/A0002系列文章-PythonOpenCV教程/" class="title">A0002系列文章 -- PythonOpenCV教程</a></p>
+                            <p class="item-title"><a href="/2018/07/01/A0002_系列文章-PythonOpenCV教程/" class="title">A0002系列文章 -- PythonOpenCV教程</a></p>
                             <p class="item-date"><time datetime="2018-07-01T06:08:52.000Z" itemprop="datePublished">2018-07-01</time></p>
                         </div>
                     </li>
@@ -401,7 +414,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/06/30/A0001系列文章-OpenCV入门教程/" class="thumbnail">
+                            <a href="/2018/06/30/A0001_系列文章-OpenCV入门教程/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -413,7 +426,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/06/30/A0001系列文章-OpenCV入门教程/" class="title">A0001系列文章 -- OpenCV入门教程</a></p>
+                            <p class="item-title"><a href="/2018/06/30/A0001_系列文章-OpenCV入门教程/" class="title">A0001系列文章 -- OpenCV入门教程</a></p>
                             <p class="item-date"><time datetime="2018-06-30T09:58:53.000Z" itemprop="datePublished">2018-06-30</time></p>
                         </div>
                     </li>
@@ -421,7 +434,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/06/30/P0001-二-三阶段考试/" class="thumbnail">
+                            <a href="/2018/06/30/P0001_二-三阶段考试/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -433,7 +446,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/06/30/P0001-二-三阶段考试/" class="title">P0001-二-三阶段考试</a></p>
+                            <p class="item-title"><a href="/2018/06/30/P0001_二-三阶段考试/" class="title">P0001-二-三阶段考试</a></p>
                             <p class="item-date"><time datetime="2018-06-30T07:46:50.000Z" itemprop="datePublished">2018-06-30</time></p>
                         </div>
                     </li>
@@ -505,7 +518,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2018/06/24/删除路径下所有文件和文件夹/';
+    var disqus_url = 'http://yoursite.com/2018/06/24/A0005_树莓派参考资料/';
     
     (function() {
     var dsq = document.createElement('script');
