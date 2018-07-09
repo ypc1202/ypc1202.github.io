@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>虾米吃大鱼</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="title: P0021 进程和线程date: 2018-07-09 16:40:30 tags:进程探究进程：这是一个在内存中运行的任务实例  Linux下进程属性： 进程拥有自己独立的PID（身份证号） 0 ~ 65535 PID是有限的  当你一台Linux有了超过65535个进程，第65536个进程 无法启动！   独立的内存空间，独立的地址。 PID： 0：这个进程是真正的调度进程(i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虾米吃大鱼">
+<meta property="og:url" content="http://yoursite.com/2018/07/09/P0021-进程和线程/index.html">
+<meta property="og:site_name" content="虾米吃大鱼">
+<meta property="og:description" content="title: P0021 进程和线程date: 2018-07-09 16:40:30 tags:进程探究进程：这是一个在内存中运行的任务实例  Linux下进程属性： 进程拥有自己独立的PID（身份证号） 0 ~ 65535 PID是有限的  当你一台Linux有了超过65535个进程，第65536个进程 无法启动！   独立的内存空间，独立的地址。 PID： 0：这个进程是真正的调度进程(i">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-07-09T11:48:39.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="虾米吃大鱼">
+<meta name="twitter:description" content="title: P0021 进程和线程date: 2018-07-09 16:40:30 tags:进程探究进程：这是一个在内存中运行的任务实例  Linux下进程属性： 进程拥有自己独立的PID（身份证号） 0 ~ 65535 PID是有限的  当你一台Linux有了超过65535个进程，第65536个进程 无法启动！   独立的内存空间，独立的地址。 PID： 0：这个进程是真正的调度进程(i">
+    
+
+    
+        <link rel="alternate" href="/" title="虾米吃大鱼" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-P0021-进程和线程" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/07/09/P0021-进程和线程/" class="article-date">
+            <time datetime="2018-07-09T08:40:30.437Z" itemprop="datePublished">2018-07-09</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <hr>
+<p>title: P0021 进程和线程<br>date: 2018-07-09 16:40:30</p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h1 id="进程探究"><a href="#进程探究" class="headerlink" title="进程探究"></a>进程探究</h1><p>进程：这是一个在内存中运行的任务实例</p>
+<ul>
+<li>Linux下进程属性：<ul>
+<li>进程拥有自己独立的PID（身份证号）<ul>
+<li>0 ~ 65535 PID是有限的 </li>
+<li>当你一台Linux有了超过65535个进程，第65536个进程 无法启动！</li>
+</ul>
+</li>
+<li>独立的内存空间，独立的地址。</li>
+<li>PID：<ul>
+<li>0：这个进程是真正的调度进程(idle进程)，是系统初始化的第一个进程，是所有其他进程的祖先！</li>
+<li>1：这个进程是Init进程，后续的系统启动，由0进程创建，第一个子进程，完成剩余的系统引导工作。</li>
+<li>2：线程/进程 管理进程</li>
+</ul>
+</li>
+<li>PCB控制块 process control block <ul>
+<li>进程PCB是用来管理进程，维护进程属性的一个数据块</li>
+<li>记录进程中的属性特征，进程的运行状态</li>
+<li>没有合法PCB的进程，不会被操作系统所识别管理</li>
+</ul>
+</li>
+<li>PCB进程控制块中主要有以下：<ul>
+<li>进程标识符 PID。</li>
+<li>调度信息：进程优先级</li>
+<li>进程状态：挂起，就绪，执行，中断，僵尸。</li>
+<li>进程使用的内存空间：文件，套接字（socket），网卡，硬件设备。</li>
+<li>处理器信息：计数器，寄存器，指针。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>进程的状态：<ul>
+<li><strong>R</strong>：就绪/运行 READY RUNNING<ul>
+<li>实际在CPU上运行的进程，可以被称作运行状态</li>
+<li>接下来要执行的进程，处于就绪状态，那么也会被称作R</li>
+</ul>
+</li>
+<li><strong>S</strong>：可中断睡眠状态<ul>
+<li>进程去等待资源，等待别人链接，等待读取文件内容，等待打开硬件设备，CPU资源不够用</li>
+<li>等待的进程，有专门的任务队列维护，通过一定的事件可以重新激活这些进程进入运行状态R</li>
+</ul>
+</li>
+<li>D：不可中断睡眠状态<ul>
+<li>一般是一些内核进程，Kill -9无法直接杀死，并且无法直接唤醒</li>
+<li>这样的进程也处于睡眠状态</li>
+<li>这种睡眠状态是为了保护一些硬件资源，保护一些设备。</li>
+</ul>
+</li>
+<li>T：暂停状态<ul>
+<li>调试程序，打断点</li>
+</ul>
+</li>
+<li>X：停止状态</li>
+<li><strong>Z</strong>：进程在退出时，必须要经过<strong>僵尸状态</strong>。<ul>
+<li>每个进程在退出的时候，都会释放掉内存，但是如果父进程并没有对他做PCB释放，</li>
+<li>这个PCB进程控制块就会保留下来，会一致占用PID</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>僵尸进程：</p>
+<ul>
+<li>父进程创建子进程，但是并没有及时回收工作完毕的子进程</li>
+<li>没有被释放资源的子进程就会被称作僵尸进程</li>
+<li>在于PCB进程控制块无法及时得到释放，所以会导致无法创建新的进程，占用了PID资源。</li>
+<li>注意：开发者要注意回收僵尸进程，没人会帮你释放僵尸进程。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>孤儿进程：</p>
+<ul>
+<li>父进程先结束了</li>
+<li>还在执行的子进程没人管了。</li>
+<li>孤儿进程就由此诞生了</li>
+<li>孤儿进程会被INIT进程接管，然后完成之后，INIT进程帮你回收。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>进程状态下一级别：</p>
+<ul>
+<li><p>s：进程的会话负责人</p>
+</li>
+<li><p>&lt;：进程有高优先级</p>
+</li>
+<li><p>N：进程有低优先级</p>
+</li>
+<li><p>l：具备多线程的进程</p>
+</li>
+<li><p>+：位于后台的进程</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>Nice值：Linux进程优先级 整数 </p>
+<ul>
+<li>权限：-20 - +19 </li>
+<li>数字越小，优先级越高</li>
+<li>只有超级用户可有把进程优先级设置为负数</li>
+</ul>
+</li>
+<li><p>VSZ：进程占用的虚拟内存大小</p>
+</li>
+<li><p>RSS：这个进程占用的固定内存大小</p>
+</li>
+<li><p>PRI/NI：进程优先级</p>
+</li>
+<li><p>TTY：打开的虚拟终端</p>
+</li>
+<li><p>PPID：当前进程的父进程ID</p>
+</li>
+<li><p>COMMAND：开启这个进程的命令</p>
+</li>
+<li><p>USER：开启进程的用户（表示了当前进程有什么样的权利）</p>
+</li>
+<li><p>F：进程旗标(process flag)</p>
+<ul>
+<li>进程的权限</li>
+<li>4：ROOT权限</li>
+</ul>
+</li>
+</ul>
+<p><strong>进程</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process,current_process</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">processList = []</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"我是子进程%s,PID:%s"</span> %(current_process().name,current_process().pid))</span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    p1 = Process(target = func ,name = <span class="string">"进程1"</span>)</span><br><span class="line">    p2 = Process(target = func ,name = <span class="string">"进程2"</span>)</span><br><span class="line">    p3 = Process(target = func ,name = <span class="string">"进程3"</span>)</span><br><span class="line">    processList = [p1,p2,p3]</span><br><span class="line">    print(processList)</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> processList:</span><br><span class="line">        item.start()</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> processList:</span><br><span class="line">        item.join() <span class="comment"># 回收进程资源 可要可不要  不要就是孤儿进程了</span></span><br><span class="line">    <span class="comment">#父进程一定会等待全部子进程结束，她才会退出</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main() <span class="comment">#父进程有的</span></span><br><span class="line">    <span class="comment">#判断当前的 多进程.py 这个脚本如果说是按照模块被别人导入了，那么这个里面的代码不会执行</span></span><br><span class="line">    print(<span class="string">'哈哈'</span>)</span><br><span class="line">    <span class="comment">#__name__：当前脚本的一个变量，</span></span><br><span class="line">        <span class="comment">#当你是单独运行这个脚本的时候，她等于__main__</span></span><br><span class="line">        <span class="comment">#当你是导入了这个脚本的时候，她等于脚本名</span></span><br></pre></td></tr></table></figure>
+<p><strong>daemon</strong>  daemon = “True”父进程结束子进程也强行结束 默认daemon = “False”父进程等待子进程结束</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process,current_process</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span> <span class="comment">#我额外开启子进程 她的工作函数</span></span><br><span class="line">    print(<span class="string">'我是子进程:'</span>,current_process().name)</span><br><span class="line">    print(<span class="string">"当前子进程PID:"</span>,current_process().pid)</span><br><span class="line">    time.sleep(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    p1 = Process(target=func,name=<span class="string">'进程1'</span>) <span class="comment">#这个进程工作func函数</span></span><br><span class="line">    p1.daemon = <span class="keyword">True</span> <span class="comment">#父进程不会等待子进程结束，并且父进程退出，子进程也会退出</span></span><br><span class="line">    p1.start()</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p><strong>多进程和单线程执行速度对比</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process,current_process</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func_1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'这是第一件事'</span>)</span><br><span class="line">    mysum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> var <span class="keyword">in</span> range(<span class="number">100000000</span>):</span><br><span class="line">        mysum += var</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func_2</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'这是第二件事情'</span>)</span><br><span class="line">    mysum = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> var <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">100000000</span>):</span><br><span class="line">        mysum = mysum - var</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func_3</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'这是第三件事情'</span>)</span><br><span class="line">    mysum = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> var <span class="keyword">in</span> range(<span class="number">100000000</span>):</span><br><span class="line">        <span class="keyword">pass</span> <span class="comment">#过滤一遍</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 单线程</span></span><br><span class="line"><span class="comment"># start = time.time()</span></span><br><span class="line"><span class="comment"># func_1()</span></span><br><span class="line"><span class="comment"># func_2()</span></span><br><span class="line"><span class="comment"># func_3()</span></span><br><span class="line"><span class="comment"># end = time.time()</span></span><br><span class="line"><span class="comment"># print('%.2f' % (end -start))</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 多线程 </span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p1 = Process(target = func_1, name = <span class="string">"func1"</span>)</span><br><span class="line">    p2 = Process(target = func_2, name = <span class="string">"func2"</span>)</span><br><span class="line">    p3 = Process(target = func_3, name = <span class="string">"func3"</span>)</span><br><span class="line">    start = time.time()</span><br><span class="line">    p1.start()</span><br><span class="line">    p2.start()</span><br><span class="line">    p3.start()</span><br><span class="line">    p1.join() <span class="comment"># 确保 P1执行完才向下进行</span></span><br><span class="line">    p2.join() <span class="comment"># 确保 P2执行完才向下进行</span></span><br><span class="line">    p3.join() <span class="comment"># 确保 P3执行完才向下进行</span></span><br><span class="line">    end = time.time()</span><br><span class="line">    print(<span class="string">'%.2f'</span> % (end -start))</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2018/07/09/P0021-进程和线程/" data-id="cjje7f0jq000pg4qhiunmmdyw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/07/07/P0020-python和pip安装/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">P0020 python和pip安装</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/09/P0021-进程和线程/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/09/P0021-进程和线程/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2018-07-09T08:40:30.437Z" itemprop="datePublished">2018-07-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/07/P0020-python和pip安装/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/07/P0020-python和pip安装/" class="title">P0020 python和pip安装</a></p>
+                            <p class="item-date"><time datetime="2018-07-07T06:25:49.000Z" itemprop="datePublished">2018-07-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/05/P0019-集合/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/05/P0019-集合/" class="title">P0019 集合</a></p>
+                            <p class="item-date"><time datetime="2018-07-05T13:36:57.000Z" itemprop="datePublished">2018-07-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/05/P0018-元组/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/05/P0018-元组/" class="title">P0018 元组</a></p>
+                            <p class="item-date"><time datetime="2018-07-05T13:20:29.000Z" itemprop="datePublished">2018-07-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/05/P0017-列表/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/05/P0017-列表/" class="title">P0017 列表</a></p>
+                            <p class="item-date"><time datetime="2018-07-05T12:29:56.000Z" itemprop="datePublished">2018-07-05</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">29</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 ypc1202</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2018/07/09/P0021-进程和线程/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

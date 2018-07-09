@@ -148,6 +148,58 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
+        <a href="/2018/07/09/P0021-进程和线程/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2018/07/09/P0021-进程和线程/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            
+            </div>
+            <div class="date"><time datetime="2018-07-09T08:40:30.437Z" itemprop="datePublished">2018-07-09</time></div>
+        </div>
+        
+        <p class="article-excerpt">
+            
+title: P0021 进程和线程date: 2018-07-09 16:40:30
+tags:进程探究进程：这是一个在内存中运行的任务实例
+
+Linux下进程属性：
+进程拥有自己独立的PID（身份证号）
+0 ~ 65535 PID是有限的 
+当你一台Linux有了超过65535个进程，第65536个进程 无法启动！
+
+
+独立的内存空间，独立的地址。
+PID：
+0：这个进程是真正的调度进程(i
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
         <a href="/2018/07/07/P0020-python和pip安装/" class="thumbnail">
     
     
@@ -187,10 +239,14 @@ ls 展示当前目录下的文件及文件夹    windows：dir命令            
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -233,14 +289,10 @@ ls 展示当前目录下的文件及文件夹    windows：dir命令            
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -283,10 +335,14 @@ ls 展示当前目录下的文件及文件夹    windows：dir命令            
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -330,14 +386,10 @@ ls 展示当前目录下的文件及文件夹    windows：dir命令            
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -381,10 +433,14 @@ ls 展示当前目录下的文件及文件夹    windows：dir命令            
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -428,14 +484,10 @@ ls 展示当前目录下的文件及文件夹    windows：dir命令            
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -478,10 +530,14 @@ ls 展示当前目录下的文件及文件夹    windows：dir命令            
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -524,14 +580,10 @@ ls 展示当前目录下的文件及文件夹    windows：dir命令            
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -570,53 +622,6 @@ ls 展示当前目录下的文件及文件夹    windows：dir命令            
 
         <p class="article-excerpt">
             1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283class myList2(list):    #我们自定义个索引从1开始的。    
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/07/04/P0011-装饰器/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2018/07/04/P0011-装饰器/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2018-07-04T06:50:20.000Z" itemprop="datePublished">2018-07-04</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/07/04/P0011-装饰器/">P0011 装饰器</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            1234567@tracedef square(x):	return x*x# 上面的代码是下面代码的简化:def square(x):	return x*xsquare = trace(square)
-1234567enableTracing = Trueif enableTracing:	debugLog = open(&quot;debug.log&quot;,&quot;w&quot;)d
         </p>
     </div>
 </article>
@@ -708,6 +713,26 @@ ls 展示当前目录下的文件及文件夹    windows：dir命令            
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/07/09/P0021-进程和线程/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/09/P0021-进程和线程/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2018-07-09T08:40:30.437Z" itemprop="datePublished">2018-07-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/07/07/P0020-python和pip安装/" class="thumbnail">
     
     
@@ -785,26 +810,6 @@ ls 展示当前目录下的文件及文件夹    windows：dir命令            
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/07/04/P0016-字符串/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/07/04/P0016-字符串/" class="title">P0016 字符串</a></p>
-                            <p class="item-date"><time datetime="2018-07-04T11:52:39.000Z" itemprop="datePublished">2018-07-04</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -817,7 +822,7 @@ ls 展示当前目录下的文件及文件夹    windows：dir命令            
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">28</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">29</span></li></ul>
         </div>
     </div>
 
