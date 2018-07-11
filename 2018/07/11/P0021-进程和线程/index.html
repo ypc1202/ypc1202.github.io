@@ -6,23 +6,23 @@
     
 
     
-    <title>虾米吃大鱼</title>
+    <title>P0021 进程和线程 | 虾米吃大鱼</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="title: P0021 进程和线程date: 2018-07-09 16:40:30 tags:进程探究进程：这是一个在内存中运行的任务实例  Linux下进程属性： 进程拥有自己独立的PID（身份证号） 0 ~ 65535 PID是有限的  当你一台Linux有了超过65535个进程，第65536个进程 无法启动！   独立的内存空间，独立的地址。 PID： 0：这个进程是真正的调度进程(i">
+    <meta name="description" content="tags:进程探究进程：这是一个在内存中运行的任务实例  Linux下进程属性： 进程拥有自己独立的PID（身份证号） 0 ~ 65535 PID是有限的  当你一台Linux有了超过65535个进程，第65536个进程 无法启动！   独立的内存空间，独立的地址。 PID： 0：这个进程是真正的调度进程(idle进程)，是系统初始化的第一个进程，是所有其他进程的祖先！ 1：这个进程是Init进程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="虾米吃大鱼">
-<meta property="og:url" content="http://yoursite.com/2018/07/09/P0021-进程和线程/index.html">
+<meta property="og:title" content="P0021 进程和线程">
+<meta property="og:url" content="http://yoursite.com/2018/07/11/P0021-进程和线程/index.html">
 <meta property="og:site_name" content="虾米吃大鱼">
-<meta property="og:description" content="title: P0021 进程和线程date: 2018-07-09 16:40:30 tags:进程探究进程：这是一个在内存中运行的任务实例  Linux下进程属性： 进程拥有自己独立的PID（身份证号） 0 ~ 65535 PID是有限的  当你一台Linux有了超过65535个进程，第65536个进程 无法启动！   独立的内存空间，独立的地址。 PID： 0：这个进程是真正的调度进程(i">
+<meta property="og:description" content="tags:进程探究进程：这是一个在内存中运行的任务实例  Linux下进程属性： 进程拥有自己独立的PID（身份证号） 0 ~ 65535 PID是有限的  当你一台Linux有了超过65535个进程，第65536个进程 无法启动！   独立的内存空间，独立的地址。 PID： 0：这个进程是真正的调度进程(idle进程)，是系统初始化的第一个进程，是所有其他进程的祖先！ 1：这个进程是Init进程">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-07-09T11:48:39.956Z">
+<meta property="og:updated_time" content="2018-07-11T02:34:58.545Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="虾米吃大鱼">
-<meta name="twitter:description" content="title: P0021 进程和线程date: 2018-07-09 16:40:30 tags:进程探究进程：这是一个在内存中运行的任务实例  Linux下进程属性： 进程拥有自己独立的PID（身份证号） 0 ~ 65535 PID是有限的  当你一台Linux有了超过65535个进程，第65536个进程 无法启动！   独立的内存空间，独立的地址。 PID： 0：这个进程是真正的调度进程(i">
+<meta name="twitter:title" content="P0021 进程和线程">
+<meta name="twitter:description" content="tags:进程探究进程：这是一个在内存中运行的任务实例  Linux下进程属性： 进程拥有自己独立的PID（身份证号） 0 ~ 65535 PID是有限的  当你一台Linux有了超过65535个进程，第65536个进程 无法启动！   独立的内存空间，独立的地址。 PID： 0：这个进程是真正的调度进程(idle进程)，是系统初始化的第一个进程，是所有其他进程的祖先！ 1：这个进程是Init进程">
     
 
     
@@ -138,12 +138,22 @@
                             <article id="post-P0021-进程和线程" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        P0021 进程和线程
+        </h1>
+    
+
+            </header>
+        
         
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/07/09/P0021-进程和线程/" class="article-date">
-            <time datetime="2018-07-09T08:40:30.437Z" itemprop="datePublished">2018-07-09</time>
+        <a href="/2018/07/11/P0021-进程和线程/" class="article-date">
+            <time datetime="2018-07-11T02:34:29.000Z" itemprop="datePublished">2018-07-11</time>
         </a>
     </div>
 
@@ -152,9 +162,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
-<p>title: P0021 进程和线程<br>date: 2018-07-09 16:40:30</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h1 id="进程探究"><a href="#进程探究" class="headerlink" title="进程探究"></a>进程探究</h1><p>进程：这是一个在内存中运行的任务实例</p>
+            <h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h1 id="进程探究"><a href="#进程探究" class="headerlink" title="进程探究"></a>进程探究</h1><p>进程：这是一个在内存中运行的任务实例</p>
 <ul>
 <li>Linux下进程属性：<ul>
 <li>进程拥有自己独立的PID（身份证号）<ul>
@@ -220,18 +228,14 @@
 </ul>
 <hr>
 <ul>
-<li><p>僵尸进程：</p>
-<ul>
+<li>僵尸进程：<ul>
 <li>父进程创建子进程，但是并没有及时回收工作完毕的子进程</li>
 <li>没有被释放资源的子进程就会被称作僵尸进程</li>
 <li>在于PCB进程控制块无法及时得到释放，所以会导致无法创建新的进程，占用了PID资源。</li>
 <li>注意：开发者要注意回收僵尸进程，没人会帮你释放僵尸进程。</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li><p>孤儿进程：</p>
-<ul>
+<li>孤儿进程：<ul>
 <li>父进程先结束了</li>
 <li>还在执行的子进程没人管了。</li>
 <li>孤儿进程就由此诞生了</li>
@@ -241,46 +245,31 @@
 </ul>
 <hr>
 <ul>
-<li><p>进程状态下一级别：</p>
-<ul>
-<li><p>s：进程的会话负责人</p>
-</li>
-<li><p>&lt;：进程有高优先级</p>
-</li>
-<li><p>N：进程有低优先级</p>
-</li>
-<li><p>l：具备多线程的进程</p>
-</li>
-<li><p>+：位于后台的进程</p>
-</li>
+<li>进程状态下一级别：<ul>
+<li>s：进程的会话负责人</li>
+<li>&lt;：进程有高优先级</li>
+<li>N：进程有低优先级</li>
+<li>l：具备多线程的进程</li>
+<li>+：位于后台的进程</li>
 </ul>
 </li>
 </ul>
 <hr>
 <ul>
-<li><p>Nice值：Linux进程优先级 整数 </p>
-<ul>
+<li>Nice值：Linux进程优先级 整数 <ul>
 <li>权限：-20 - +19 </li>
 <li>数字越小，优先级越高</li>
 <li>只有超级用户可有把进程优先级设置为负数</li>
 </ul>
 </li>
-<li><p>VSZ：进程占用的虚拟内存大小</p>
-</li>
-<li><p>RSS：这个进程占用的固定内存大小</p>
-</li>
-<li><p>PRI/NI：进程优先级</p>
-</li>
-<li><p>TTY：打开的虚拟终端</p>
-</li>
-<li><p>PPID：当前进程的父进程ID</p>
-</li>
-<li><p>COMMAND：开启这个进程的命令</p>
-</li>
-<li><p>USER：开启进程的用户（表示了当前进程有什么样的权利）</p>
-</li>
-<li><p>F：进程旗标(process flag)</p>
-<ul>
+<li>VSZ：进程占用的虚拟内存大小</li>
+<li>RSS：这个进程占用的固定内存大小</li>
+<li>PRI/NI：进程优先级</li>
+<li>TTY：打开的虚拟终端</li>
+<li>PPID：当前进程的父进程ID</li>
+<li>COMMAND：开启这个进程的命令</li>
+<li>USER：开启进程的用户（表示了当前进程有什么样的权利）</li>
+<li>F：进程旗标(process flag)<ul>
 <li>进程的权限</li>
 <li>4：ROOT权限</li>
 </ul>
@@ -299,7 +288,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2018/07/09/P0021-进程和线程/" data-id="cjjggihq3000srcqhds8b4svb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/11/P0021-进程和线程/" data-id="cjjgijafi000rxkqht8fxuy8v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -436,7 +425,7 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/07/10/P0022-进程间通讯/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/07/11/P0022-进程间通讯/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
@@ -471,7 +460,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/07/10/P0022-进程间通讯/" class="thumbnail">
+                            <a href="/2018/07/11/P0022-进程间通讯/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -483,15 +472,15 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/07/10/P0022-进程间通讯/" class="title">P0022 进程间通讯</a></p>
-                            <p class="item-date"><time datetime="2018-07-10T06:08:20.000Z" itemprop="datePublished">2018-07-10</time></p>
+                            <p class="item-title"><a href="/2018/07/11/P0022-进程间通讯/" class="title">P0022 进程间通讯</a></p>
+                            <p class="item-date"><time datetime="2018-07-11T02:35:27.000Z" itemprop="datePublished">2018-07-11</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/07/09/P0021-进程和线程/" class="thumbnail">
+                            <a href="/2018/07/11/P0021-进程和线程/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -503,8 +492,8 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/07/09/P0021-进程和线程/" class="title"></a></p>
-                            <p class="item-date"><time datetime="2018-07-09T08:40:30.437Z" itemprop="datePublished">2018-07-09</time></p>
+                            <p class="item-title"><a href="/2018/07/11/P0021-进程和线程/" class="title">P0021 进程和线程</a></p>
+                            <p class="item-date"><time datetime="2018-07-11T02:34:29.000Z" itemprop="datePublished">2018-07-11</time></p>
                         </div>
                     </li>
                 
@@ -635,7 +624,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2018/07/09/P0021-进程和线程/';
+    var disqus_url = 'http://yoursite.com/2018/07/11/P0021-进程和线程/';
     
     (function() {
     var dsq = document.createElement('script');
