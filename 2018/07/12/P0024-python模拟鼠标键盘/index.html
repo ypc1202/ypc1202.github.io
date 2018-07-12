@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>P0024 python模拟鼠标键盘 | 虾米吃大鱼</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="1.安装win32api，下载地址：http://sourceforge.net/projects/pywin32/files/pywin32/   2. 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P0024 python模拟鼠标键盘">
+<meta property="og:url" content="http://yoursite.com/2018/07/12/P0024-python模拟鼠标键盘/index.html">
+<meta property="og:site_name" content="虾米吃大鱼">
+<meta property="og:description" content="1.安装win32api，下载地址：http://sourceforge.net/projects/pywin32/files/pywin32/   2. 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-07-12T05:31:59.694Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="P0024 python模拟鼠标键盘">
+<meta name="twitter:description" content="1.安装win32api，下载地址：http://sourceforge.net/projects/pywin32/files/pywin32/   2. 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656">
+    
+
+    
+        <link rel="alternate" href="/" title="虾米吃大鱼" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-P0024-python模拟鼠标键盘" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        P0024 python模拟鼠标键盘
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/07/12/P0024-python模拟鼠标键盘/" class="article-date">
+            <time datetime="2018-07-12T05:27:32.000Z" itemprop="datePublished">2018-07-12</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>1.安装win32api，下载地址：<a href="http://sourceforge.net/projects/pywin32/files/pywin32/" target="_blank" rel="noopener">http://sourceforge.net/projects/pywin32/files/pywin32/</a>  </p>
+<p>2.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># _*_ coding:UTF-8 _*_</span></span><br><span class="line"><span class="keyword">import</span> win32api</span><br><span class="line"><span class="keyword">import</span> win32con</span><br><span class="line"><span class="keyword">import</span> win32gui</span><br><span class="line"><span class="keyword">from</span> ctypes <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">VK_CODE = &#123;</span><br><span class="line">  <span class="string">'backspace'</span>:<span class="number">0x08</span>,</span><br><span class="line">  <span class="string">'tab'</span>:<span class="number">0x09</span>,</span><br><span class="line">  <span class="string">'clear'</span>:<span class="number">0x0C</span>,</span><br><span class="line">  <span class="string">'enter'</span>:<span class="number">0x0D</span>,</span><br><span class="line">  <span class="string">'shift'</span>:<span class="number">0x10</span>,</span><br><span class="line">  <span class="string">'ctrl'</span>:<span class="number">0x11</span>,</span><br><span class="line">  <span class="string">'alt'</span>:<span class="number">0x12</span>,</span><br><span class="line">  <span class="string">'pause'</span>:<span class="number">0x13</span>,</span><br><span class="line">  <span class="string">'caps_lock'</span>:<span class="number">0x14</span>,</span><br><span class="line">  <span class="string">'esc'</span>:<span class="number">0x1B</span>,</span><br><span class="line">  <span class="string">'spacebar'</span>:<span class="number">0x20</span>,</span><br><span class="line">  <span class="string">'page_up'</span>:<span class="number">0x21</span>,</span><br><span class="line">  <span class="string">'page_down'</span>:<span class="number">0x22</span>,</span><br><span class="line">  <span class="string">'end'</span>:<span class="number">0x23</span>,</span><br><span class="line">  <span class="string">'home'</span>:<span class="number">0x24</span>,</span><br><span class="line">  <span class="string">'left_arrow'</span>:<span class="number">0x25</span>,</span><br><span class="line">  <span class="string">'up_arrow'</span>:<span class="number">0x26</span>,</span><br><span class="line">  <span class="string">'right_arrow'</span>:<span class="number">0x27</span>,</span><br><span class="line">  <span class="string">'down_arrow'</span>:<span class="number">0x28</span>,</span><br><span class="line">  <span class="string">'select'</span>:<span class="number">0x29</span>,</span><br><span class="line">  <span class="string">'print'</span>:<span class="number">0x2A</span>,</span><br><span class="line">  <span class="string">'execute'</span>:<span class="number">0x2B</span>,</span><br><span class="line">  <span class="string">'print_screen'</span>:<span class="number">0x2C</span>,</span><br><span class="line">  <span class="string">'ins'</span>:<span class="number">0x2D</span>,</span><br><span class="line">  <span class="string">'del'</span>:<span class="number">0x2E</span>,</span><br><span class="line">  <span class="string">'help'</span>:<span class="number">0x2F</span>,</span><br><span class="line">  <span class="string">'0'</span>:<span class="number">0x30</span>,</span><br><span class="line">  <span class="string">'1'</span>:<span class="number">0x31</span>,</span><br><span class="line">  <span class="string">'2'</span>:<span class="number">0x32</span>,</span><br><span class="line">  <span class="string">'3'</span>:<span class="number">0x33</span>,</span><br><span class="line">  <span class="string">'4'</span>:<span class="number">0x34</span>,</span><br><span class="line">  <span class="string">'5'</span>:<span class="number">0x35</span>,</span><br><span class="line">  <span class="string">'6'</span>:<span class="number">0x36</span>,</span><br><span class="line">  <span class="string">'7'</span>:<span class="number">0x37</span>,</span><br><span class="line">  <span class="string">'8'</span>:<span class="number">0x38</span>,</span><br><span class="line">  <span class="string">'9'</span>:<span class="number">0x39</span>,</span><br><span class="line">  <span class="string">'a'</span>:<span class="number">0x41</span>,</span><br><span class="line">  <span class="string">'b'</span>:<span class="number">0x42</span>,</span><br><span class="line">  <span class="string">'c'</span>:<span class="number">0x43</span>,</span><br><span class="line">  <span class="string">'d'</span>:<span class="number">0x44</span>,</span><br><span class="line">  <span class="string">'e'</span>:<span class="number">0x45</span>,</span><br><span class="line">  <span class="string">'f'</span>:<span class="number">0x46</span>,</span><br><span class="line">  <span class="string">'g'</span>:<span class="number">0x47</span>,</span><br><span class="line">  <span class="string">'h'</span>:<span class="number">0x48</span>,</span><br><span class="line">  <span class="string">'i'</span>:<span class="number">0x49</span>,</span><br><span class="line">  <span class="string">'j'</span>:<span class="number">0x4A</span>,</span><br><span class="line">  <span class="string">'k'</span>:<span class="number">0x4B</span>,</span><br><span class="line">  <span class="string">'l'</span>:<span class="number">0x4C</span>,</span><br><span class="line">  <span class="string">'m'</span>:<span class="number">0x4D</span>,</span><br><span class="line">  <span class="string">'n'</span>:<span class="number">0x4E</span>,</span><br><span class="line">  <span class="string">'o'</span>:<span class="number">0x4F</span>,</span><br><span class="line">  <span class="string">'p'</span>:<span class="number">0x50</span>,</span><br><span class="line">  <span class="string">'q'</span>:<span class="number">0x51</span>,</span><br><span class="line">  <span class="string">'r'</span>:<span class="number">0x52</span>,</span><br><span class="line">  <span class="string">'s'</span>:<span class="number">0x53</span>,</span><br><span class="line">  <span class="string">'t'</span>:<span class="number">0x54</span>,</span><br><span class="line">  <span class="string">'u'</span>:<span class="number">0x55</span>,</span><br><span class="line">  <span class="string">'v'</span>:<span class="number">0x56</span>,</span><br><span class="line">  <span class="string">'w'</span>:<span class="number">0x57</span>,</span><br><span class="line">  <span class="string">'x'</span>:<span class="number">0x58</span>,</span><br><span class="line">  <span class="string">'y'</span>:<span class="number">0x59</span>,</span><br><span class="line">  <span class="string">'z'</span>:<span class="number">0x5A</span>,</span><br><span class="line">  <span class="string">'numpad_0'</span>:<span class="number">0x60</span>,</span><br><span class="line">  <span class="string">'numpad_1'</span>:<span class="number">0x61</span>,</span><br><span class="line">  <span class="string">'numpad_2'</span>:<span class="number">0x62</span>,</span><br><span class="line">  <span class="string">'numpad_3'</span>:<span class="number">0x63</span>,</span><br><span class="line">  <span class="string">'numpad_4'</span>:<span class="number">0x64</span>,</span><br><span class="line">  <span class="string">'numpad_5'</span>:<span class="number">0x65</span>,</span><br><span class="line">  <span class="string">'numpad_6'</span>:<span class="number">0x66</span>,</span><br><span class="line">  <span class="string">'numpad_7'</span>:<span class="number">0x67</span>,</span><br><span class="line">  <span class="string">'numpad_8'</span>:<span class="number">0x68</span>,</span><br><span class="line">  <span class="string">'numpad_9'</span>:<span class="number">0x69</span>,</span><br><span class="line">  <span class="string">'multiply_key'</span>:<span class="number">0x6A</span>,</span><br><span class="line">  <span class="string">'add_key'</span>:<span class="number">0x6B</span>,</span><br><span class="line">  <span class="string">'separator_key'</span>:<span class="number">0x6C</span>,</span><br><span class="line">  <span class="string">'subtract_key'</span>:<span class="number">0x6D</span>,</span><br><span class="line">  <span class="string">'decimal_key'</span>:<span class="number">0x6E</span>,</span><br><span class="line">  <span class="string">'divide_key'</span>:<span class="number">0x6F</span>,</span><br><span class="line">  <span class="string">'F1'</span>:<span class="number">0x70</span>,</span><br><span class="line">  <span class="string">'F2'</span>:<span class="number">0x71</span>,</span><br><span class="line">  <span class="string">'F3'</span>:<span class="number">0x72</span>,</span><br><span class="line">  <span class="string">'F4'</span>:<span class="number">0x73</span>,</span><br><span class="line">  <span class="string">'F5'</span>:<span class="number">0x74</span>,</span><br><span class="line">  <span class="string">'F6'</span>:<span class="number">0x75</span>,</span><br><span class="line">  <span class="string">'F7'</span>:<span class="number">0x76</span>,</span><br><span class="line">  <span class="string">'F8'</span>:<span class="number">0x77</span>,</span><br><span class="line">  <span class="string">'F9'</span>:<span class="number">0x78</span>,</span><br><span class="line">  <span class="string">'F10'</span>:<span class="number">0x79</span>,</span><br><span class="line">  <span class="string">'F11'</span>:<span class="number">0x7A</span>,</span><br><span class="line">  <span class="string">'F12'</span>:<span class="number">0x7B</span>,</span><br><span class="line">  <span class="string">'F13'</span>:<span class="number">0x7C</span>,</span><br><span class="line">  <span class="string">'F14'</span>:<span class="number">0x7D</span>,</span><br><span class="line">  <span class="string">'F15'</span>:<span class="number">0x7E</span>,</span><br><span class="line">  <span class="string">'F16'</span>:<span class="number">0x7F</span>,</span><br><span class="line">  <span class="string">'F17'</span>:<span class="number">0x80</span>,</span><br><span class="line">  <span class="string">'F18'</span>:<span class="number">0x81</span>,</span><br><span class="line">  <span class="string">'F19'</span>:<span class="number">0x82</span>,</span><br><span class="line">  <span class="string">'F20'</span>:<span class="number">0x83</span>,</span><br><span class="line">  <span class="string">'F21'</span>:<span class="number">0x84</span>,</span><br><span class="line">  <span class="string">'F22'</span>:<span class="number">0x85</span>,</span><br><span class="line">  <span class="string">'F23'</span>:<span class="number">0x86</span>,</span><br><span class="line">  <span class="string">'F24'</span>:<span class="number">0x87</span>,</span><br><span class="line">  <span class="string">'num_lock'</span>:<span class="number">0x90</span>,</span><br><span class="line">  <span class="string">'scroll_lock'</span>:<span class="number">0x91</span>,</span><br><span class="line">  <span class="string">'left_shift'</span>:<span class="number">0xA0</span>,</span><br><span class="line">  <span class="string">'right_shift '</span>:<span class="number">0xA1</span>,</span><br><span class="line">  <span class="string">'left_control'</span>:<span class="number">0xA2</span>,</span><br><span class="line">  <span class="string">'right_control'</span>:<span class="number">0xA3</span>,</span><br><span class="line">  <span class="string">'left_menu'</span>:<span class="number">0xA4</span>,</span><br><span class="line">  <span class="string">'right_menu'</span>:<span class="number">0xA5</span>,</span><br><span class="line">  <span class="string">'browser_back'</span>:<span class="number">0xA6</span>,</span><br><span class="line">  <span class="string">'browser_forward'</span>:<span class="number">0xA7</span>,</span><br><span class="line">  <span class="string">'browser_refresh'</span>:<span class="number">0xA8</span>,</span><br><span class="line">  <span class="string">'browser_stop'</span>:<span class="number">0xA9</span>,</span><br><span class="line">  <span class="string">'browser_search'</span>:<span class="number">0xAA</span>,</span><br><span class="line">  <span class="string">'browser_favorites'</span>:<span class="number">0xAB</span>,</span><br><span class="line">  <span class="string">'browser_start_and_home'</span>:<span class="number">0xAC</span>,</span><br><span class="line">  <span class="string">'volume_mute'</span>:<span class="number">0xAD</span>,</span><br><span class="line">  <span class="string">'volume_Down'</span>:<span class="number">0xAE</span>,</span><br><span class="line">  <span class="string">'volume_up'</span>:<span class="number">0xAF</span>,</span><br><span class="line">  <span class="string">'next_track'</span>:<span class="number">0xB0</span>,</span><br><span class="line">  <span class="string">'previous_track'</span>:<span class="number">0xB1</span>,</span><br><span class="line">  <span class="string">'stop_media'</span>:<span class="number">0xB2</span>,</span><br><span class="line">  <span class="string">'play/pause_media'</span>:<span class="number">0xB3</span>,</span><br><span class="line">  <span class="string">'start_mail'</span>:<span class="number">0xB4</span>,</span><br><span class="line">  <span class="string">'select_media'</span>:<span class="number">0xB5</span>,</span><br><span class="line">  <span class="string">'start_application_1'</span>:<span class="number">0xB6</span>,</span><br><span class="line">  <span class="string">'start_application_2'</span>:<span class="number">0xB7</span>,</span><br><span class="line">  <span class="string">'attn_key'</span>:<span class="number">0xF6</span>,</span><br><span class="line">  <span class="string">'crsel_key'</span>:<span class="number">0xF7</span>,</span><br><span class="line">  <span class="string">'exsel_key'</span>:<span class="number">0xF8</span>,</span><br><span class="line">  <span class="string">'play_key'</span>:<span class="number">0xFA</span>,</span><br><span class="line">  <span class="string">'zoom_key'</span>:<span class="number">0xFB</span>,</span><br><span class="line">  <span class="string">'clear_key'</span>:<span class="number">0xFE</span>,</span><br><span class="line">  <span class="string">'+'</span>:<span class="number">0xBB</span>,</span><br><span class="line">  <span class="string">','</span>:<span class="number">0xBC</span>,</span><br><span class="line">  <span class="string">'-'</span>:<span class="number">0xBD</span>,</span><br><span class="line">  <span class="string">'.'</span>:<span class="number">0xBE</span>,</span><br><span class="line">  <span class="string">'/'</span>:<span class="number">0xBF</span>,</span><br><span class="line">  <span class="string">'`'</span>:<span class="number">0xC0</span>,</span><br><span class="line">  <span class="string">';'</span>:<span class="number">0xBA</span>,</span><br><span class="line">  <span class="string">'['</span>:<span class="number">0xDB</span>,</span><br><span class="line">  <span class="string">'\\'</span>:<span class="number">0xDC</span>,</span><br><span class="line">  <span class="string">']'</span>:<span class="number">0xDD</span>,</span><br><span class="line">  <span class="string">"'"</span>:<span class="number">0xDE</span>,</span><br><span class="line">  <span class="string">'`'</span>:<span class="number">0xC0</span>&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">POINT</span><span class="params">(Structure)</span>:</span></span><br><span class="line">  _fields_ = [(<span class="string">"x"</span>, c_ulong),(<span class="string">"y"</span>, c_ulong)]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_mouse_point</span><span class="params">()</span>:</span></span><br><span class="line">  po = POINT()</span><br><span class="line">  windll.user32.GetCursorPos(byref(po))</span><br><span class="line">  <span class="keyword">return</span> int(po.x), int(po.y)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mouse_click</span><span class="params">(x=None,y=None)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> x <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">and</span> <span class="keyword">not</span> y <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">    mouse_move(x,y)</span><br><span class="line">    time.sleep(<span class="number">0.05</span>)</span><br><span class="line">  win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">  win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mouse_dclick</span><span class="params">(x=None,y=None)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> x <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">and</span> <span class="keyword">not</span> y <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">    mouse_move(x,y)</span><br><span class="line">    time.sleep(<span class="number">0.05</span>)</span><br><span class="line">  win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">  win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">  win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">  win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mouse_move</span><span class="params">(x,y)</span>:</span></span><br><span class="line">  windll.user32.SetCursorPos(x, y)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">key_input</span><span class="params">(str=<span class="string">''</span>)</span>:</span></span><br><span class="line">  <span class="keyword">for</span> c <span class="keyword">in</span> str:</span><br><span class="line">    win32api.keybd_event(VK_CODE[c],<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line">    win32api.keybd_event(VK_CODE[c],<span class="number">0</span>,win32con.KEYEVENTF_KEYUP,<span class="number">0</span>)</span><br><span class="line">    time.sleep(<span class="number">0.01</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:  </span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        a,b = get_mouse_point()</span><br><span class="line">        mouse_click(a,b)</span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line">        mouse_click(a,b)</span><br><span class="line">        time.sleep(<span class="number">4</span>)</span><br><span class="line">        print(<span class="string">"hello world"</span>)</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2018/07/12/P0024-python模拟鼠标键盘/" data-id="cjji49nvr000r88qh85lkbs47" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/07/11/P0023-inspect模块详解/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">P0023 inspect模块详解</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/12/P0024-python模拟鼠标键盘/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/12/P0024-python模拟鼠标键盘/" class="title">P0024 python模拟鼠标键盘</a></p>
+                            <p class="item-date"><time datetime="2018-07-12T05:27:32.000Z" itemprop="datePublished">2018-07-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/11/P0023-inspect模块详解/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/11/P0023-inspect模块详解/" class="title">P0023 inspect模块详解</a></p>
+                            <p class="item-date"><time datetime="2018-07-11T02:42:07.000Z" itemprop="datePublished">2018-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/11/P0022-进程间通讯/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/11/P0022-进程间通讯/" class="title">P0022 进程间通讯</a></p>
+                            <p class="item-date"><time datetime="2018-07-11T02:35:27.000Z" itemprop="datePublished">2018-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/11/P0021-进程和线程/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/11/P0021-进程和线程/" class="title">P0021 进程和线程</a></p>
+                            <p class="item-date"><time datetime="2018-07-11T02:34:29.000Z" itemprop="datePublished">2018-07-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/07/P0020-python和pip安装/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/07/P0020-python和pip安装/" class="title">P0020 python和pip安装</a></p>
+                            <p class="item-date"><time datetime="2018-07-07T06:25:49.000Z" itemprop="datePublished">2018-07-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">32</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 ypc1202</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2018/07/12/P0024-python模拟鼠标键盘/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
